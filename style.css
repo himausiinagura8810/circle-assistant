@@ -3,25 +3,25 @@ body {
     font-family: sans-serif;
 }
 
-main {
-    width: 90%;
-    max-width: 500px;
-    margin: 50px auto;
+main{
+    width:90%;
+    max-width:500px;
+    margin:50px auto;
+    text-align:center;
 }
 
-button {
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 18px;
+button{
+    background:#4a90e2;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:18px 35px;
+    font-size:20px;
 }
 
-img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
+img{
+    width:200px;
+    height:auto;
+    display:block;
+    margin:0 auto;
 }
