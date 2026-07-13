@@ -17,3 +17,11 @@ button {
     border-radius: 10px;
     font-size: 18px;
 }
+
+img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
