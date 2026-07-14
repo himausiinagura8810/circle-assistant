@@ -61,7 +61,7 @@ button {
 .character-image {
     display: block;
     width: 100%;
-    max-width: 620px;
+    max-width: 500px;
     max-height: 94vh;
     object-fit: contain;
     object-position: center bottom;
