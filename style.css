@@ -11,14 +11,17 @@ body {
 
 .app {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .screen {
     display: none;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     grid-template-columns: 42% 58%;
+    overflow: hidden;
 }
 
 .screen.active {
@@ -31,6 +34,8 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 40px;
+    min-width: 0;
+　　 overflow-y: auto;
 }
 
 .menu-panel h1,
