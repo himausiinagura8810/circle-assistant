@@ -6,29 +6,42 @@ body {
     margin: 0;
     background-color: #f5f5f5;
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 .app {
     width: 100%;
     min-height: 100vh;
-    display: grid;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
     grid-template-columns: 42% 58%;
 }
 
-.menu-panel {
+.screen.active {
+    display: grid;
+}
+
+.menu-panel,
+.detail-panel {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 40px;
 }
 
-.menu-panel h1 {
+.menu-panel h1,
+.detail-panel h1 {
     margin: 0 0 16px;
     font-size: 42px;
 }
 
-.menu-panel p {
-    margin: 0 0 32px;
+.menu-panel p,
+.detail-panel > p {
+    margin: 0 0 24px;
     font-size: 20px;
     line-height: 1.6;
 }
@@ -67,62 +80,6 @@ button {
     object-position: center bottom;
 }
 
-.content-panel {
-    min-height: 150px;
-    margin-bottom: 24px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 16px;
-}
-
-.content-panel h2 {
-    margin: 0 0 12px;
-    font-size: 24px;
-}
-
-.content-panel p {
-    margin: 8px 0;
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-.detail-button {
-    min-height: auto;
-    margin-top: 12px;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 10px;
-}
-
-.screen {
-    display: none;
-    width: 100%;
-    min-height: 100vh;
-    grid-template-columns: 42% 58%;
-}
-
-.screen.active {
-    display: grid;
-}
-
-.detail-panel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-}
-
-.detail-panel h1 {
-    margin: 0 0 16px;
-    font-size: 42px;
-}
-
-.detail-panel > p {
-    margin: 0 0 24px;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
 .detail-content {
     padding: 20px;
     background-color: white;
@@ -150,27 +107,17 @@ button {
 }
 
 @media (max-width: 700px) {
+    body {
+        overflow: auto;
+    }
+
     .screen {
         grid-template-columns: 1fr;
     }
 
+    .menu-panel,
     .detail-panel {
         padding: 24px;
-    }
-}
-
-/* 縦向きや幅の狭い画面では上下に並べる */
-@media (max-width: 700px) {
-    .app {
-        grid-template-columns: 1fr;
-    }
-
-    .menu-panel {
-        padding: 24px;
-    }
-
-    .menu-buttons {
-        grid-template-columns: 1fr 1fr;
     }
 
     .character-panel {
@@ -178,6 +125,6 @@ button {
     }
 
     .character-image {
-        max-height: 65vh;
+        max-height: 60vh;
     }
 }
