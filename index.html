@@ -11,38 +11,65 @@
 
     <main class="app">
 
-        <section class="menu-panel">
+    <section id="home-screen" class="screen active">
 
-            <h1 id="title">ようこそ！</h1>
+        <div class="menu-panel">
 
-            <p id="message">
+            <h1>ようこそ！</h1>
+
+            <p>
                 今日は来てくれてありがとうございます！
             </p>
 
-            <div id="content" class="content-panel">
-    <p>気になるメニューを選んでください。</p>
-</div>
-
             <div class="menu-buttons">
-                <button onclick="showNewBook()">新刊を見る</button>
-                <button onclick="showBacklist()">既刊を見る</button>
-                <button onclick="showProfile()">作者紹介</button>
-                <button onclick="showSNS()">SNSを見る</button>
+                <button onclick="openScreen('newbook')">新刊を見る</button>
+                <button onclick="openScreen('backlist')">既刊を見る</button>
+                <button onclick="openScreen('profile')">作者紹介</button>
+                <button onclick="openScreen('sns')">SNSを見る</button>
             </div>
 
-        </section>
+        </div>
 
-        <section class="character-panel">
-
+        <div class="character-panel">
             <img
                 class="character-image"
                 src="character.png"
                 alt="案内キャラクター"
             >
+        </div>
 
-        </section>
+    </section>
 
-    </main>
+    <section id="detail-screen" class="screen">
+
+        <div class="detail-panel">
+
+            <button class="back-button" onclick="goHome()">
+                ← 戻る
+            </button>
+
+            <h1 id="detail-title">新刊情報</h1>
+
+            <p id="detail-message">
+                こちらが今回の新刊です！
+            </p>
+
+            <div id="detail-content" class="detail-content">
+            </div>
+
+        </div>
+
+        <div class="character-panel">
+            <img
+                class="character-image"
+                src="character.png"
+                alt="案内キャラクター"
+            >
+        </div>
+
+    </section>
+
+</main>
 
     <script src="script.js"></script>
 
