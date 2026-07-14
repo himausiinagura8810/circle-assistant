@@ -67,6 +67,33 @@ button {
     object-position: center bottom;
 }
 
+.content-panel {
+    min-height: 150px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.content-panel h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+}
+
+.content-panel p {
+    margin: 8px 0;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.detail-button {
+    min-height: auto;
+    margin-top: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
 /* 縦向きや幅の狭い画面では上下に並べる */
 @media (max-width: 700px) {
     .app {
