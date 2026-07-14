@@ -1,13 +1,28 @@
 const screens = {
     newbook: {
-        title: "新刊情報",
-        message: "こちらが今回の新刊です！",
-        content: `
-            <h2>作品タイトル：準備中</h2>
-            <p>価格：未定</p>
-            <p>イベント当日に頒布予定です。</p>
-        `
-    },
+    title: "新刊情報",
+    message: "こちらが今回の新刊です！",
+    content: `
+        <article class="book-card">
+
+            <div class="book-cover-placeholder">
+                表紙画像
+            </div>
+            <div class="book-info">
+                <h2>作品タイトル：準備中</h2>
+                <p class="book-price">
+                    価格：未定
+                </p>
+                <p>
+                    イベント当日に頒布予定です。
+                </p>
+                <p>
+                    詳しい内容は、今後こちらへ追加します。
+                </p>
+            </div>
+        </article>
+    `
+},
 
     backlist: {
         title: "既刊情報",
