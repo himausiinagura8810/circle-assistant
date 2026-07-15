@@ -5,9 +5,11 @@ const screens = {
     content: `
         <article class="book-card">
 
-            <div class="book-cover-placeholder">
-                表紙画像
-            </div>
+            <img
+            class="book-cover"
+            src="newbook-cover.png"
+            alt="新刊表紙"
+            >
             <div class="book-info">
                 <h2>作品タイトル：準備中</h2>
                 <p class="book-price">
