@@ -6,11 +6,18 @@ const screens = {
         content: `
             <article class="book-card">
 
-                <img
-                    class="book-cover"
-                    src="newbook-cover.png"
-                    alt="新刊表紙"
-                >
+                <button
+    class="cover-button"
+    type="button"
+    onclick="openCover()"
+    aria-label="新刊表紙を拡大表示"
+>
+    <img
+        class="book-cover"
+        src="newbook-cover.png"
+        alt="新刊表紙"
+    >
+</button>
 
                 <div class="book-info">
 
