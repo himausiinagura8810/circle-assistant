@@ -87,7 +87,35 @@
     </section>
 
 </main>
+<div
+    id="cover-modal"
+    class="cover-modal"
+    aria-hidden="true"
+    onclick="closeCover(event)"
+>
+    <div class="cover-modal-content">
 
+        <button
+            class="cover-close-button"
+            type="button"
+            onclick="closeCover()"
+            aria-label="拡大表示を閉じる"
+        >
+            ×
+        </button>
+
+        <img
+            class="cover-modal-image"
+            src="newbook-cover.png"
+            alt="新刊表紙の拡大画像"
+        >
+
+        <p class="cover-modal-help">
+            画像の外側をタップすると戻ります
+        </p>
+
+    </div>
+</div>
     <script src="script.js"></script>
 
 </body>
