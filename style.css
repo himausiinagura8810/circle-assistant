@@ -148,6 +148,45 @@ button {
 .book-price {
     font-weight: bold;
 }
+.book-title {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.book-details {
+    margin: 0 0 20px;
+}
+
+.book-details div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.book-details dt {
+    font-weight: bold;
+}
+
+.book-details dd {
+    margin: 0;
+}
+
+.book-summary {
+    margin-top: 20px;
+}
+
+.book-summary h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.book-summary p {
+    margin: 0;
+    line-height: 1.7;
+}
 @media (max-width: 700px) {
     body {
         overflow: auto;
