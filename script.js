@@ -3,28 +3,46 @@ const screens = {
     title: "新刊情報",
     message: "こちらが今回の新刊です！",
     content: `
-        <article class="book-card">
+    <article class="book-card">
 
-            <img
+        <img
             class="book-cover"
             src="newbook-cover.png"
             alt="新刊表紙"
-            >
-            <div class="book-info">
-                <h2>作品タイトル：準備中</h2>
-                <p class="book-price">
-                    価格：未定
-                </p>
+        >
+
+        <div class="book-info">
+            <h2 class="book-title">
+                作品タイトル
+            </h2>
+            <dl class="book-details">
+                <div>
+                    <dt>価格</dt>
+                    <dd>未定</dd>
+                </div>
+                <div>
+                    <dt>ページ数</dt>
+                    <dd>未定</dd>
+                </div>
+                <div>
+                    <dt>ジャンル</dt>
+                    <dd>未定</dd>
+                </div>
+                <div>
+                    <dt>頒布予定</dt>
+                    <dd>イベント当日</dd>
+                </div>
+            </dl>
+            <section class="book-summary">
+                <h3>作品紹介</h3>
                 <p>
-                    イベント当日に頒布予定です。
+                    ここに新刊のあらすじや、
+                    おすすめポイントを掲載します。
                 </p>
-                <p>
-                    詳しい内容は、今後こちらへ追加します。
-                </p>
-            </div>
-        </article>
-    `
-},
+            </section>
+        </div>
+    </article>
+`
 
     backlist: {
         title: "既刊情報",
