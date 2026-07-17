@@ -404,6 +404,27 @@ button:active {
     position: relative;
 }
 /* ========================================
+   キャラクターのリアクション
+======================================== */
+
+.character-reaction {
+    animation: character-pop 0.45s ease-out;
+}
+
+@keyframes character-pop {
+    0% {
+        transform: translateY(20px) scale(0.96);
+    }
+
+    60% {
+        transform: translateY(-8px) scale(1.02);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
