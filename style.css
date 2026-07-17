@@ -1,13 +1,29 @@
+/* ========================================
+   ページ全体の基本設定
+======================================== */
+
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
+}
+
+body {
     background-color: #f5f5f5;
+    color: #111111;
     font-family: sans-serif;
     overflow: hidden;
 }
+
+
+/* ========================================
+   アプリ全体
+======================================== */
 
 .app {
     width: 100%;
@@ -16,11 +32,15 @@ body {
     overflow: hidden;
 }
 
+
+/* ========================================
+   画面切り替え
+======================================== */
+
 .screen {
     display: none;
     width: 100%;
     height: 100%;
-    grid-template-columns: 50% 50%;
     overflow: hidden;
 }
 
@@ -28,194 +48,374 @@ body {
     display: grid;
 }
 
+
+/* トップ画面 */
+#home-screen {
+    grid-template-columns: 42% 58%;
+}
+
+
+/* 詳細画面 */
+#detail-screen {
+    grid-template-columns: 60% 40%;
+}
+
+
+/* ========================================
+   左側のパネル
+======================================== */
+
 .menu-panel,
 .detail-panel {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
     height: 100%;
     min-width: 0;
+
     padding: 32px 40px;
+
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
+
+/* ========================================
+   左側の見出しと説明文
+======================================== */
+
 .menu-panel h1,
 .detail-panel h1 {
     margin: 0 0 12px;
+
     font-size: 36px;
+    line-height: 1.3;
 }
 
-.menu-panel p,
+.menu-panel > p,
 .detail-panel > p {
     margin: 0 0 24px;
+
     font-size: 20px;
     line-height: 1.6;
 }
 
+
+/* ========================================
+   トップ画面のメニューボタン
+======================================== */
+
 .menu-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 16px;
 }
 
 button {
     min-height: 74px;
+
     padding: 16px;
+
     background-color: #4a90e2;
     color: white;
+
     border: none;
     border-radius: 16px;
+
+    font-family: inherit;
     font-size: 22px;
     font-weight: bold;
+
+    cursor: pointer;
 }
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   戻るボタン
+======================================== */
+
+.back-button {
+    align-self: flex-start;
+
+    min-height: auto;
+
+    margin-bottom: 24px;
+    padding: 12px 20px;
+
+    border-radius: 999px;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   キャラクター表示部分
+======================================== */
 
 .character-panel {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    overflow: hidden;
+
+    min-width: 0;
+
     padding: 24px 24px 0;
+
+    overflow: hidden;
 }
 
 .character-image {
     display: block;
+
     width: 100%;
     max-width: 460px;
     max-height: 92vh;
+
     object-fit: contain;
     object-position: center bottom;
 }
 
+
+/* 詳細画面のキャラクターだけ少し小さくする */
+#detail-screen .character-image {
+    max-width: 400px;
+}
+
+
+/* ========================================
+   詳細情報全体の白いパネル
+======================================== */
+
 .detail-content {
     padding: 20px;
+
     background-color: white;
+
     border-radius: 16px;
 }
 
 .detail-content h2 {
     margin: 0 0 12px;
+
     font-size: 24px;
+    line-height: 1.4;
 }
 
 .detail-content p {
     margin: 8px 0;
+
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.back-button {
-    align-self: flex-start;
-    min-height: auto;
-    margin-bottom: 24px;
-    padding: 12px 20px;
-    font-size: 18px;
-    border-radius: 999px;
-}
+
+/* ========================================
+   新刊カード
+======================================== */
+
 .book-card {
     display: grid;
-    grid-template-columns: minmax(160px, 40%) minmax(0, 1fr);
+
+    grid-template-columns:
+        minmax(160px, 40%)
+        minmax(0, 1fr);
+
     gap: 24px;
     align-items: start;
 }
 
+
+/* ========================================
+   新刊表紙
+======================================== */
+
 .book-cover {
     display: block;
+
     width: 100%;
     height: auto;
     max-height: 340px;
+
     object-fit: contain;
+
     border-radius: 12px;
 }
+
+
+/* ========================================
+   新刊の文章部分
+======================================== */
 
 .book-info {
     min-width: 0;
     overflow-wrap: anywhere;
 }
 
-.book-info h2 {
-    margin: 0 0 12px;
-    font-size: 22px;
-    line-height: 1.4;
-}
 
-.book-info p {
-    margin: 8px 0;
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-.book-price {
-    font-weight: bold;
-}
+/* 作品タイトル */
 .book-title {
-    margin: 0 0 16px;
-    font-size: 24px;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid #222222;
+
+    font-size: 28px;
     line-height: 1.4;
 }
+
+
+/* ========================================
+   価格・ページ数などの情報欄
+   パンフレット風デザイン
+======================================== */
 
 .book-details {
-    margin: 0 0 20px;
+    margin: 0 0 24px;
+    padding: 4px 18px;
+
+    background-color: #f7f7f7;
+
+    border-left: 6px solid #4a90e2;
+    border-radius: 10px;
 }
 
+
+/* 1項目ずつ上下に並べる */
 .book-details div {
-    display: grid;
-    grid-template-columns: 100px minmax(0, 1fr);
-    gap: 12px;
-    padding: 8px 0;
+    display: block;
+
+    padding: 12px 0;
+
     border-bottom: 1px solid #dddddd;
 }
 
-.book-details dd {
-    margin: 0;
-    overflow-wrap: normal;
-    word-break: keep-all;
+
+/* 最後の項目だけ下線を消す */
+.book-details div:last-child {
+    border-bottom: none;
 }
 
+
+/* 「価格」「ページ数」などの項目名 */
+.book-details dt {
+    margin-bottom: 4px;
+
+    color: #666666;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+
+/* 「未定」「イベント当日」などの内容 */
+.book-details dd {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.5;
+
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   作品紹介欄
+======================================== */
+
 .book-summary {
-    margin-top: 20px;
+    margin-top: 24px;
+    padding: 18px;
+
+    background-color: #fff8e8;
+
+    border-radius: 12px;
 }
 
 .book-summary h3 {
     margin: 0 0 10px;
+
     font-size: 20px;
 }
 
 .book-summary p {
     margin: 0;
-    line-height: 1.7;
-}
-/* トップ画面はキャラクター側を広くする */
-#home-screen {
-    grid-template-columns: 42% 58%;
+
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-/* 詳細画面は作品情報側を広くする */
-#detail-screen {
-    grid-template-columns: 60% 40%;
-}
-#detail-screen .character-image {
-    max-width: 400px;
-}
+
+/* ========================================
+   画面幅が狭い場合
+======================================== */
+
 @media (max-width: 700px) {
+
     body {
         overflow: auto;
     }
 
+    .app {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
     .screen {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .screen.active {
+        display: grid;
+    }
+
+    #home-screen,
+    #detail-screen {
         grid-template-columns: 1fr;
     }
 
     .menu-panel,
     .detail-panel {
+        height: auto;
         padding: 24px;
+        overflow: visible;
+    }
+
+    .menu-buttons {
+        grid-template-columns: 1fr 1fr;
     }
 
     .character-panel {
         min-height: 420px;
     }
 
-    .character-image {
+    .character-image,
+    #detail-screen .character-image {
+        max-width: 400px;
         max-height: 60vh;
+    }
+
+    .book-card {
+        grid-template-columns: 1fr;
+    }
+
+    .book-cover {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
     }
 }
