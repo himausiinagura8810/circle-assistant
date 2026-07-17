@@ -43,7 +43,7 @@ const screens = {
         </div>
     </article>
 `
-
+},
     backlist: {
         title: "既刊情報",
         message: "これまでに頒布した作品をご紹介します。",
