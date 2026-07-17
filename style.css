@@ -114,7 +114,7 @@ button {
 }
 .book-card {
     display: grid;
-    grid-template-columns: minmax(120px, 38%) 1fr;
+    grid-template-columns: minmax(160px, 40%) minmax(0, 1fr);
     gap: 24px;
     align-items: start;
 }
@@ -160,18 +160,16 @@ button {
 
 .book-details div {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 100px minmax(0, 1fr);
     gap: 12px;
     padding: 8px 0;
     border-bottom: 1px solid #dddddd;
 }
 
-.book-details dt {
-    font-weight: bold;
-}
-
 .book-details dd {
     margin: 0;
+    overflow-wrap: normal;
+    word-break: keep-all;
 }
 
 .book-summary {
@@ -186,6 +184,18 @@ button {
 .book-summary p {
     margin: 0;
     line-height: 1.7;
+}
+/* トップ画面はキャラクター側を広くする */
+#home-screen {
+    grid-template-columns: 42% 58%;
+}
+
+/* 詳細画面は作品情報側を広くする */
+#detail-screen {
+    grid-template-columns: 60% 40%;
+}
+#detail-screen .character-image {
+    max-width: 400px;
 }
 @media (max-width: 700px) {
     body {
