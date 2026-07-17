@@ -103,6 +103,14 @@ function openScreen(screenName) {
 
     document.getElementById("detail-speech").textContent =
     selectedScreen.speech;
+    const character =
+    document.getElementById("detail-character");
+
+character.classList.remove("character-reaction");
+
+void character.offsetWidth;
+
+character.classList.add("character-reaction");
 
     document.getElementById("home-screen")
         .classList.remove("active");
