@@ -356,7 +356,53 @@ button:active {
     line-height: 1.8;
 }
 
+/* ========================================
+   キャラクターの吹き出し
+======================================== */
 
+.speech-bubble {
+    position: absolute;
+    top: 32px;
+    left: 24px;
+    right: 24px;
+
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 16px 20px;
+
+    background-color: white;
+
+    border: 3px solid #222222;
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+
+    z-index: 2;
+}
+
+.speech-bubble::after {
+    content: "";
+
+    position: absolute;
+    right: 48px;
+    bottom: -18px;
+
+    width: 28px;
+    height: 28px;
+
+    background-color: white;
+
+    border-right: 3px solid #222222;
+    border-bottom: 3px solid #222222;
+
+    transform: rotate(45deg);
+}
+
+.character-panel {
+    position: relative;
+}
 /* ========================================
    画面幅が狭い場合
 ======================================== */
