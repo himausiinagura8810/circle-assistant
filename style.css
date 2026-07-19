@@ -532,6 +532,92 @@ button:active {
     text-align: center;
 }
 /* ========================================
+   画面切り替えアニメーション
+======================================== */
+
+.screen.active {
+    animation: screen-fade-in 0.35s ease-out;
+}
+
+@keyframes screen-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* 左側の内容を少し横から登場させる */
+.screen.active .menu-panel,
+.screen.active .detail-panel {
+    animation: panel-slide-in 0.4s ease-out;
+}
+
+@keyframes panel-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* キャラクターを少し遅れて表示する */
+.screen.active .character-panel {
+    animation: character-panel-in 0.45s ease-out;
+}
+
+@keyframes character-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 表紙拡大画面も滑らかに表示する */
+.cover-modal.open {
+    animation: modal-fade-in 0.25s ease-out;
+}
+
+.cover-modal.open .cover-modal-content {
+    animation: modal-cover-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modal-cover-in {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
