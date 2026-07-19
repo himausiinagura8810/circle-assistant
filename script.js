@@ -7,17 +7,17 @@ const screens = {
             <article class="book-card">
 
                 <button
-    class="cover-button"
-    type="button"
-    onclick="openCover()"
-    aria-label="新刊表紙を拡大表示"
->
-    <img
-        class="book-cover"
-        src="newbook-cover.png"
-        alt="新刊表紙"
-    >
-</button>
+                    class="cover-button"
+                    type="button"
+                    onclick="openCover()"
+                    aria-label="新刊表紙を拡大表示"
+                >
+                    <img
+                        class="book-cover"
+                        src="newbook-cover.png"
+                        alt="新刊表紙"
+                    >
+                </button>
 
                 <div class="book-info">
 
@@ -109,15 +109,16 @@ function openScreen(screenName) {
         selectedScreen.content;
 
     document.getElementById("detail-speech").textContent =
-    selectedScreen.speech;
+        selectedScreen.speech;
+
     const character =
-    document.getElementById("detail-character");
+        document.getElementById("detail-character");
 
-character.classList.remove("character-reaction");
+    character.classList.remove("character-reaction");
 
-void character.offsetWidth;
+    void character.offsetWidth;
 
-character.classList.add("character-reaction");
+    character.classList.add("character-reaction");
 
     document.getElementById("home-screen")
         .classList.remove("active");
@@ -127,8 +128,16 @@ character.classList.add("character-reaction");
 }
 
 function goHome() {
-    function openCover() {
-    const modal = document.getElementById("cover-modal");
+    document.getElementById("detail-screen")
+        .classList.remove("active");
+
+    document.getElementById("home-screen")
+        .classList.add("active");
+}
+
+function openCover() {
+    const modal =
+        document.getElementById("cover-modal");
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
@@ -142,26 +151,17 @@ function closeCover(event) {
         return;
     }
 
-    const modal = document.getElementById("cover-modal");
+    const modal =
+        document.getElementById("cover-modal");
 
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
 }
-    document.getElementById("detail-screen")
-        .classList.remove("active");
 
-    document.getElementById("home-screen")
-        .classList.add("active");
-    <button
-    class="cover-close-button"
-    type="button"
-    onclick="
-        document
-            .getElementById('cover-modal')
-            .classList.remove('open')
-    "
-    aria-label="拡大表示を閉じる"
->
-    ×
-</button>
+function forceCloseCover() {
+    const modal =
+        document.getElementById("cover-modal");
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
 }
