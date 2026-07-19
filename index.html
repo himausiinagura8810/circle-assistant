@@ -1,122 +1,192 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>同人誌即売会アシスタント</title>
-    <link rel="stylesheet" href="style.css"> 
+
+    <link
+        rel="stylesheet"
+        href="style.css?v=24"
+    >
 </head>
 
 <body>
 
     <main class="app">
 
-    <section id="home-screen" class="screen active">
+        <!-- =====================================
+             ホーム画面
+        ====================================== -->
 
-        <div class="menu-panel">
+        <section
+            id="home-screen"
+            class="screen active"
+        >
 
-            <h1>ようこそ！</h1>
+            <div class="menu-panel">
 
-            <p>
-                今日は来てくれてありがとうございます！
-            </p>
+                <h1>ようこそ！</h1>
 
-            <div class="menu-buttons">
-                <button onclick="openScreen('newbook')">新刊を見る</button>
-                <button onclick="openScreen('backlist')">既刊を見る</button>
-                <button onclick="openScreen('profile')">作者紹介</button>
-                <button onclick="openScreen('sns')">SNSを見る</button>
+                <p>
+                    今日は来てくれてありがとうございます！
+                </p>
+
+                <div class="menu-buttons">
+
+                    <button
+                        type="button"
+                        onclick="openScreen('newbook')"
+                    >
+                        新刊を見る
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="openScreen('backlist')"
+                    >
+                        既刊を見る
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="openScreen('profile')"
+                    >
+                        作者紹介
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="openScreen('sns')"
+                    >
+                        SNSを見る
+                    </button>
+
+                </div>
+
             </div>
 
-        </div>
+            <div class="character-panel">
 
-        <div class="character-panel">
+                <div class="speech-bubble">
+                    気になるメニューを選んでくれ！
+                </div>
 
-    <div class="speech-bubble">
-        気になるメニューを選んでくれ！
-    </div>
+                <img
+                    class="character-image"
+                    src="character.png"
+                    alt="案内キャラクター"
+                >
 
-    <img
-    id="detail-character"
-    class="character-image"
-    src="character.png"
-    alt="案内キャラクター"
->
-
-</div>
-
-    </section>
-
-    <section id="detail-screen" class="screen">
-
-        <div class="detail-panel">
-
-            <button class="back-button" onclick="goHome()">
-                ← 戻る
-            </button>
-
-            <h1 id="detail-title">新刊情報</h1>
-
-            <p id="detail-message">
-                こちらが今回の新刊です！
-            </p>
-
-            <div id="detail-content" class="detail-content">
             </div>
 
-        </div>
+        </section>
 
-        <div class="character-panel">
+
+        <!-- =====================================
+             詳細画面
+        ====================================== -->
+
+        <section
+            id="detail-screen"
+            class="screen"
+        >
+
+            <div class="detail-panel">
+
+                <button
+                    class="back-button"
+                    type="button"
+                    onclick="goHome()"
+                >
+                    ← 戻る
+                </button>
+
+                <h1 id="detail-title">
+                    新刊情報
+                </h1>
+
+                <p id="detail-message">
+                    こちらが今回の新刊です！
+                </p>
+
+                <div
+                    id="detail-content"
+                    class="detail-content"
+                >
+                </div>
+
+            </div>
+
+            <div class="character-panel">
+
+                <div
+                    id="detail-speech"
+                    class="speech-bubble"
+                >
+                    こちらを紹介するぞ！
+                </div>
+
+                <img
+                    id="detail-character"
+                    class="character-image"
+                    src="character.png"
+                    alt="案内キャラクター"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         新刊表紙の拡大表示
+    ====================================== -->
 
     <div
-        id="detail-speech"
-        class="speech-bubble"
+        id="cover-modal"
+        class="cover-modal"
+        aria-hidden="true"
+        onclick="closeCover(event)"
     >
-        こちらを紹介するぞ！
-    </div>
 
-    <img
-    id="detail-character"
-    class="character-image"
-    src="character.png"
-    alt="案内キャラクター"
->
+        <div class="cover-modal-content">
 
-</div>
+            <button
+                class="cover-close-button"
+                type="button"
+                onclick="forceCloseCover()"
+                aria-label="拡大表示を閉じる"
+            >
+                ×
+            </button>
 
-    </section>
+            <img
+                class="cover-modal-image"
+                src="newbook-cover.png"
+                alt="新刊表紙の拡大画像"
+            >
 
-</main>
-<div
-    id="cover-modal"
-    class="cover-modal"
-    aria-hidden="true"
-    onclick="closeCover(event)"
->
-    <div class="cover-modal-content">
+            <p class="cover-modal-help">
+                画像の外側をタップすると戻ります
+            </p>
 
-        <button
-            class="cover-close-button"
-            type="button"
-            onclick="closeCover()"
-            aria-label="拡大表示を閉じる"
-        >
-            ×
-        </button>
-
-        <img
-            class="cover-modal-image"
-            src="newbook-cover.png"
-            alt="新刊表紙の拡大画像"
-        >
-
-        <p class="cover-modal-help">
-            画像の外側をタップすると戻ります
-        </p>
+        </div>
 
     </div>
-</div>
-    <script src="script.js"></script>
+
+
+    <!-- JavaScriptの読み込み -->
+    <script src="script.js?v=24"></script>
 
 </body>
+
 </html>
