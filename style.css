@@ -618,10 +618,163 @@ button:active {
     }
 }
 /* ========================================
+   既刊一覧
+======================================== */
+
+.backlist-card {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+
+    margin-bottom: 22px;
+    padding: 18px;
+
+    background-color: #ffffff;
+
+    border-left: 6px solid #4a90e2;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+}
+
+
+/* ========================================
+   既刊表紙のボタン
+======================================== */
+
+.backlist-cover-button {
+    display: block;
+
+    width: 100%;
+    min-height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 10px;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.backlist-cover-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   既刊表紙
+======================================== */
+
+.backlist-cover {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+
+    object-fit: contain;
+
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+
+/* ========================================
+   既刊の文章部分
+======================================== */
+
+.backlist-info {
+    min-width: 0;
+}
+
+.backlist-info h2 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #222222;
+
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   価格・ページ数・ジャンル
+======================================== */
+
+.backlist-info dl {
+    margin: 0 0 14px;
+}
+
+.backlist-info dl div {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.backlist-info dt {
+    color: #666666;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.backlist-info dd {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   既刊の紹介文
+======================================== */
+
+.backlist-info > p {
+    margin: 14px 0 0;
+    padding: 14px;
+
+    background-color: #fff8e8;
+    border-radius: 10px;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
 @media (max-width: 700px) {
+   .backlist-card {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px;
+}
+
+.backlist-info h2 {
+    font-size: 20px;
+}
+
+.backlist-info dl div {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 8px;
+}
+
+.backlist-cover {
+    max-height: 170px;
+}
 
     body {
         overflow: auto;
