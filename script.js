@@ -5,15 +5,20 @@
 const backlistBooks = [
 
     {
-        title: "ドMの品格",
-        price: "500円",
-        pages: "32P",
-        genre: "ギャグ",
-        image: "backbook1.png",
+    title: "ドMの品格",
+    price: "500円",
+    pages: "32P",
+    genre: "ギャグ",
+    image: "backbook1.png",
 
-        description:
-            "レスラー達の日常を描いたギャグ漫画です。"
-    },
+    special: [
+        "描き下ろしペーパー",
+        "イベント限定ポストカード"
+    ],
+
+    description:
+        "レスラー達の日常を描いたギャグ漫画です。"
+},
 
     {
         title: "準備中",
