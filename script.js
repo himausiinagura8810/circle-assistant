@@ -1,4 +1,4 @@
-/* ==========================
+；/* ==========================
    既刊データ
 ========================== */
 
@@ -252,8 +252,10 @@ function createBacklistHTML() {
                             </div>
                         </dl>
 
+                        ${createSpecialHTML(book.special)}
+
                         <p>
-                            ${book.description}
+                        ${book.description}
                         </p>
 
                     </div>
@@ -275,4 +277,25 @@ function openBookCover(image, title) {
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
+}
+function createSpecialHTML(specialItems) {
+    if (!specialItems || specialItems.length === 0) {
+        return "";
+    }
+
+    const listItems = specialItems
+        .map((item) => {
+            return `<li>${item}</li>`;
+        })
+        .join("");
+
+    return `
+        <section class="book-special">
+            <h3>購入特典</h3>
+
+            <ul>
+                ${listItems}
+            </ul>
+        </section>
+    `;
 }
