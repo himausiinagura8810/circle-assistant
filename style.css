@@ -753,6 +753,41 @@ button:active {
     line-height: 1.7;
 }
 /* ========================================
+   既刊の購入特典
+======================================== */
+
+.book-special {
+    margin: 14px 0 0;
+    padding: 14px;
+
+    background-color: #eef6ff;
+    border-left: 5px solid #4a90e2;
+    border-radius: 10px;
+}
+
+.book-special h3 {
+    margin: 0 0 8px;
+
+    font-size: 17px;
+}
+
+.book-special h3::before {
+    content: "🎁 ";
+}
+
+.book-special ul {
+    margin: 0;
+    padding-left: 1.3em;
+}
+
+.book-special li {
+    margin: 5px 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
