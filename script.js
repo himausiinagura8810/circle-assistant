@@ -51,7 +51,10 @@ const newBook = {
     genre: "未定",
     release: "イベント当日",
     image: "newbook-cover.png",
-
+ 　　badges: [
+    "新刊",
+    "全年齢"
+],
     special: [
         "描き下ろしペーパー"
     ],
@@ -191,7 +194,7 @@ function createNewBookHTML() {
             </button>
 
             <div class="book-info">
-
+　　　　　　　　　　${createBadgeHTML(newBook.badges)}
                 <h2 class="book-title">
                     ${newBook.title}
                 </h2>
@@ -320,5 +323,22 @@ function createSpecialHTML(specialItems) {
                 ${listItems}
             </ul>
         </section>
+    `;
+}
+function createBadgeHTML(badges) {
+    if (!badges || badges.length === 0) {
+        return "";
+    }
+
+    const badgeItems = badges
+        .map((badge) => {
+            return `<span class="book-badge">${badge}</span>`;
+        })
+        .join("");
+
+    return `
+        <div class="book-badges">
+            ${badgeItems}
+        </div>
     `;
 }
