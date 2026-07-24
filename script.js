@@ -10,6 +10,10 @@ const backlistBooks = [
     pages: "32P",
     genre: "ギャグ",
     image: "backbook1.png",
+    badges: [
+    "既刊",
+    "全年齢"
+],
 
     special: [
         "描き下ろしペーパー",
@@ -26,7 +30,9 @@ const backlistBooks = [
         pages: "未定",
         genre: "未定",
         image: "backbook2.png",
-
+　　　　　badges: [
+         "準備中"
+],
         description:
             "こちらは準備中です。"
     },
@@ -258,7 +264,7 @@ function createBacklistHTML() {
                     </button>
 
                     <div class="backlist-info">
-
+　　　　　　　　　　　　　　　　${createBadgeHTML(book.badges)}
                         <h2>${book.title}</h2>
 
                         <dl>
