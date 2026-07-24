@@ -788,6 +788,32 @@ button:active {
 }
 
 /* ========================================
+   作品バッジ
+======================================== */
+
+.book-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+.book-badge {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    background-color: #2478c5;
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
