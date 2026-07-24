@@ -338,7 +338,13 @@ function createBadgeHTML(badges) {
 
     const badgeItems = badges
         .map((badge) => {
-            return `<span class="book-badge">${badge}</span>`;
+            const badgeClass = getBadgeClass(badge);
+
+            return `
+                <span class="book-badge ${badgeClass}">
+                    ${badge}
+                </span>
+            `;
         })
         .join("");
 
@@ -347,4 +353,27 @@ function createBadgeHTML(badges) {
             ${badgeItems}
         </div>
     `;
+}
+function getBadgeClass(badge) {
+    if (badge === "新刊") {
+        return "badge-new";
+    }
+
+    if (badge === "既刊") {
+        return "badge-backlist";
+    }
+
+    if (badge === "全年齢") {
+        return "badge-all-ages";
+    }
+
+    if (badge === "準備中") {
+        return "badge-coming-soon";
+    }
+
+    if (badge === "R18") {
+        return "badge-r18";
+    }
+
+    return "";
 }
