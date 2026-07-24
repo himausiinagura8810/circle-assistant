@@ -1,4 +1,26 @@
 /* ==========================
+   SNSなどリンク
+========================== */
+const socialLinks = [
+    {
+        name: "X",
+        url: "https://x.com/mokurou8810",
+        description: "最新情報はこちら"
+    },
+
+    {
+        name: "pixiv",
+        url: "https://www.pixiv.net/users/1186894",
+        description: "イラストや漫画を掲載"
+    },
+
+    {
+        name: "BOOTH",
+        url: "https://mokurou.booth.pm/",
+        description: "通販ページはこちら"
+    }
+];
+/* ==========================
    既刊データ
 ========================== */
 
@@ -95,14 +117,11 @@ const screens = {
     },
 
     sns: {
-        title: "SNS",
-        message: "SNSや通販ページはこちらです。",
-        speech: "活動情報を見たいなら、ここを確認してくれ！",
-        content: `
-            <h2>活動ページ</h2>
-            <p>X・pixiv・BOOTHなどを掲載する予定です。</p>
-        `
-    }
+    title: "SNS",
+    message: "SNSや通販ページはこちらです。",
+    speech: "活動情報を見たいなら、ここを確認してくれ！",
+    content: ""
+}
 };
 
 function openScreen(screenName) {
@@ -117,9 +136,15 @@ function openScreen(screenName) {
     if (screenName === "newbook") {
     document.getElementById("detail-content").innerHTML =
         createNewBookHTML();
+
 } else if (screenName === "backlist") {
     document.getElementById("detail-content").innerHTML =
         createBacklistHTML();
+
+} else if (screenName === "sns") {
+    document.getElementById("detail-content").innerHTML =
+        createSocialLinksHTML();
+
 } else {
     document.getElementById("detail-content").innerHTML =
         selectedScreen.content;
@@ -376,4 +401,44 @@ function getBadgeClass(badge) {
     }
 
     return "";
+}
+function createSocialLinksHTML() {
+    const linkItems = socialLinks
+        .map((link) => {
+            return `
+                <a
+                    class="social-link"
+                    href="${link.url}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="social-link-name">
+                        ${link.name}
+                    </span>
+
+                    <span class="social-link-description">
+                        ${link.description}
+                    </span>
+
+                    <span class="social-link-arrow">
+                        →
+                    </span>
+                </a>
+            `;
+        })
+        .join("");
+
+    return `
+        <section class="social-links">
+            <h2>活動ページ</h2>
+
+            <p class="social-links-intro">
+                各サービスのページを開きます。
+            </p>
+
+            <div class="social-link-list">
+                ${linkItems}
+            </div>
+        </section>
+    `;
 }
