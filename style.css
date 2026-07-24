@@ -813,6 +813,27 @@ button:active {
     font-weight: bold;
     line-height: 1.2;
 }
+/* バッジの種類別カラー */
+
+.badge-new {
+    background-color: #2478c5;
+}
+
+.badge-backlist {
+    background-color: #68737d;
+}
+
+.badge-all-ages {
+    background-color: #2f8f5b;
+}
+
+.badge-coming-soon {
+    background-color: #d47a16;
+}
+
+.badge-r18 {
+    background-color: #c63d3d;
+}
 /* ========================================
    画面幅が狭い場合
 ======================================== */
