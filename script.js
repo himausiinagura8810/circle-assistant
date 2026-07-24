@@ -43,6 +43,22 @@ const backlistBooks = [
     }
 
 ];
+
+const newBook = {
+    title: "作品タイトル",
+    price: "いちおくまんえん",
+    pages: "未定",
+    genre: "未定",
+    release: "イベント当日",
+    image: "newbook-cover.png",
+
+    special: [
+        "描き下ろしペーパー"
+    ],
+
+    description:
+        "ここに新刊のあらすじや、おすすめポイントを掲載します。"
+};
 const screens = {
     newbook: {
         title: "新刊情報",
