@@ -159,7 +159,7 @@ function openScreen(screenName) {
 
 } else {
     document.getElementById("detail-content").innerHTML =
-        selectedScreen.content;
+        selectedScreen.content;ふ
 }
 
     document.getElementById("detail-speech").textContent =
@@ -474,10 +474,6 @@ function renderCircleInfo() {
         <h2 class="circle-info-name">
             ${circleInfo.name}
         </h2>
-
-        /* ========================================
-   サークル情報の詳細
-======================================== */
 
 <dl class="circle-info-details">
     <div>
