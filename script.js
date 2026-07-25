@@ -452,3 +452,46 @@ function createSocialLinksHTML() {
         </section>
     `;
 }
+/* ========================================
+   サークル情報の表示
+======================================== */
+
+function renderCircleInfo() {
+    const circleInfoArea =
+        document.getElementById("circle-info");
+
+    if (!circleInfoArea) {
+        return;
+    }
+
+    circleInfoArea.innerHTML = `
+        <p class="circle-info-label">
+            サークル情報
+        </p>
+
+        <h2 class="circle-info-name">
+            ${circleInfo.name}
+        </h2>
+
+        <dl class="circle-info-details">
+            <div>
+                <dt>参加イベント</dt>
+                <dd>${circleInfo.event}</dd>
+            </div>
+
+            <div>
+                <dt>スペース</dt>
+                <dd>${circleInfo.space}</dd>
+            </div>
+        </dl>
+
+        <p class="circle-info-message">
+            ${circleInfo.message}
+        </p>
+    `;
+}
+/* ========================================
+   初期表示
+======================================== */
+
+renderCircleInfo();
