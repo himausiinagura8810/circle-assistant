@@ -974,6 +974,23 @@ button:active {
     line-height: 1.6;
 }
 /* ========================================
+   サークルスペースの強調表示
+======================================== */
+
+.circle-info-space {
+    display: inline-block;
+
+    width: fit-content;
+    padding: 5px 12px;
+
+    color: #ffffff;
+    background-color: #2478c5;
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
