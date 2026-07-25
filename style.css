@@ -995,6 +995,13 @@ button:active {
 ======================================== */
 
 @media (max-width: 700px) {
+       /* ========================================
+       吹き出しをキャラクターへ近づける
+    ======================================== */
+
+    .speech-bubble {
+        top: 160px;
+    }
    .backlist-card {
     grid-template-columns: 110px minmax(0, 1fr);
     gap: 14px;
