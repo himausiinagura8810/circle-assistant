@@ -475,7 +475,11 @@ function renderCircleInfo() {
             ${circleInfo.name}
         </h2>
 
-        <dl class="circle-info-details">
+        /* ========================================
+   サークル情報の詳細
+======================================== */
+
+<dl class="circle-info-details">
     <div>
         <dt>参加イベント</dt>
         <dd>${circleInfo.event}</dd>
@@ -485,12 +489,12 @@ function renderCircleInfo() {
         <dt>開催日</dt>
         <dd>${circleInfo.date}</dd>
     </div>
-    
-　　　<div>
+
+    <div>
         <dt>会場</dt>
         <dd>${circleInfo.venue}</dd>
     </div>
-    
+
     <div>
         <dt>スペース</dt>
         <dd class="circle-info-space">
