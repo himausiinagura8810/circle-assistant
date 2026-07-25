@@ -5,6 +5,7 @@
 const circleInfo = {
     name: "銀河の荒くれモン",
     event: "イベント名",
+    date: "開催日未定",
     space: "スペース未定",
     message: "遊びに来てください！"
 };
@@ -474,16 +475,23 @@ function renderCircleInfo() {
         </h2>
 
         <dl class="circle-info-details">
-            <div>
-                <dt>参加イベント</dt>
-                <dd>${circleInfo.event}</dd>
-            </div>
+    <div>
+        <dt>参加イベント</dt>
+        <dd>${circleInfo.event}</dd>
+    </div>
 
-            <div>
-                <dt>スペース</dt>
-                <dd>${circleInfo.space}</dd>
-            </div>
-        </dl>
+    <div>
+        <dt>開催日</dt>
+        <dd>${circleInfo.date}</dd>
+    </div>
+
+    <div>
+        <dt>スペース</dt>
+        <dd class="circle-info-space">
+            ${circleInfo.space}
+        </dd>
+    </div>
+</dl>
 
         <p class="circle-info-message">
             ${circleInfo.message}
