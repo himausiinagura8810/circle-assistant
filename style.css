@@ -991,6 +991,134 @@ button:active {
     font-weight: bold;
 }
 /* ========================================
+   作者紹介カード
+======================================== */
+
+.profile-card {
+    padding: 22px;
+
+    background-color: #ffffff;
+    border-left: 6px solid #4a90e2;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.profile-label {
+    display: inline-block;
+
+    margin: 0 0 10px;
+    padding: 4px 10px;
+
+    color: #ffffff;
+    background-color: #2478c5;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.profile-name {
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid #222222;
+
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   作者紹介の基本情報
+======================================== */
+
+.profile-details {
+    margin: 0 0 22px;
+}
+
+.profile-details div {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.profile-details dt {
+    color: #666666;
+    font-weight: bold;
+}
+
+.profile-details dd {
+    margin: 0;
+
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.profile-activities {
+    margin: 0;
+    padding-left: 1.3em;
+}
+
+.profile-activities li {
+    margin: 3px 0;
+}
+
+
+/* ========================================
+   作者紹介の作風・ジャンル
+======================================== */
+
+.profile-section {
+    margin-top: 18px;
+    padding: 18px;
+
+    background-color: #fff8e8;
+    border-radius: 12px;
+}
+
+.profile-section h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.profile-section p {
+    margin: 0;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   作者紹介のひとこと
+======================================== */
+
+.profile-message {
+    margin-top: 16px;
+    padding: 18px;
+
+    background-color: #eef6ff;
+    border-left: 5px solid #4a90e2;
+    border-radius: 12px;
+}
+
+.profile-message h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.profile-message p {
+    margin: 0;
+
+    line-height: 1.8;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
