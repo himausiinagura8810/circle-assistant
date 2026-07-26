@@ -137,16 +137,16 @@ const screens = {
     content: ""
 },
 
-    profile: {
-        title: "作者紹介",
-        message: "作者についてご紹介します！",
-        speech: "作者本人にも、気軽に声をかけてみてくれ！",
-        content: `
-            <h2>プロフィール</h2>
-            <p>漫画やイラストを制作しています。</p>
-            <p>ぜひ気軽に声をかけてください！</p>
-        `
-    },
+    /* ========================================
+   作者紹介画面
+   ======================================== */
+
+profile: {
+    title: "作者紹介",
+    message: "作者についてご紹介します！",
+    speech: "作者本人にも、気軽に声をかけてみてくれ！",
+    content: ""
+},
 
     sns: {
     title: "SNS",
@@ -165,7 +165,11 @@ function openScreen(screenName) {
     document.getElementById("detail-message").textContent =
         selectedScreen.message;
 
-    if (screenName === "newbook") {
+    /* ========================================
+   詳細画面に表示する内容を選ぶ
+   ======================================== */
+
+if (screenName === "newbook") {
     document.getElementById("detail-content").innerHTML =
         createNewBookHTML();
 
@@ -173,13 +177,17 @@ function openScreen(screenName) {
     document.getElementById("detail-content").innerHTML =
         createBacklistHTML();
 
+} else if (screenName === "profile") {
+    document.getElementById("detail-content").innerHTML =
+        createProfileHTML();
+
 } else if (screenName === "sns") {
     document.getElementById("detail-content").innerHTML =
         createSocialLinksHTML();
 
 } else {
     document.getElementById("detail-content").innerHTML =
-        selectedScreen.content;ふ
+        selectedScreen.content;
 }
 
     document.getElementById("detail-speech").textContent =
@@ -299,6 +307,63 @@ function createNewBookHTML() {
             </div>
 
         </article>
+    `;
+}
+/* ========================================
+   作者紹介ページ生成
+======================================== */
+
+function createProfileHTML() {
+    const activityItems = profileInfo.activities
+        .map((activity) => {
+            return `<li>${activity}</li>`;
+        })
+        .join("");
+
+    return `
+        <section class="profile-card">
+
+            <p class="profile-label">
+                作者プロフィール
+            </p>
+
+            <h2 class="profile-name">
+                ${profileInfo.name}
+            </h2>
+
+            <dl class="profile-details">
+                <div>
+                    <dt>サークル名</dt>
+                    <dd>${profileInfo.circle}</dd>
+                </div>
+
+                <div>
+                    <dt>主な活動</dt>
+                    <dd>
+                        <ul class="profile-activities">
+                            ${activityItems}
+                        </ul>
+                    </dd>
+                </div>
+            </dl>
+
+            <section class="profile-section">
+                <h3>作風・ジャンル</h3>
+
+                <p>
+                    ${profileInfo.favoriteGenre}
+                </p>
+            </section>
+
+            <section class="profile-message">
+                <h3>ひとこと</h3>
+
+                <p>
+                    ${profileInfo.message}
+                </p>
+            </section>
+
+        </section>
     `;
 }
 function createBacklistHTML() {
