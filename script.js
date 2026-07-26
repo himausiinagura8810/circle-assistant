@@ -23,7 +23,15 @@ const profileInfo = {
         "イラスト制作",
         "同人誌制作"
     ],
+/* ========================================
+   作者の活動歴・実績
+======================================== */
 
+achievements: [
+    "同人誌即売会への参加",
+    "漫画・イラスト作品の制作",
+    "キャラクターデザインの制作"
+],
     favoriteGenre:
         "ギャグ漫画や、個性的なキャラクターを中心に制作しています。",
 
@@ -319,7 +327,15 @@ function createProfileHTML() {
             return `<li>${activity}</li>`;
         })
         .join("");
+/* ========================================
+   活動歴・実績の一覧を作る
+======================================== */
 
+const achievementItems = profileInfo.achievements
+    .map((achievement) => {
+        return `<li>${achievement}</li>`;
+    })
+    .join("");
     return `
         <section class="profile-card">
 
@@ -346,7 +362,17 @@ function createProfileHTML() {
                     </dd>
                 </div>
             </dl>
+/* ========================================
+   活動歴・実績の表示
+======================================== */
 
+<section class="profile-section">
+    <h3>活動歴・実績</h3>
+
+    <ul class="profile-achievements">
+        ${achievementItems}
+    </ul>
+</section>
             <section class="profile-section">
                 <h3>作風・ジャンル</h3>
 
