@@ -362,9 +362,6 @@ const achievementItems = profileInfo.achievements
                     </dd>
                 </div>
             </dl>
-/* ========================================
-   活動歴・実績の表示
-======================================== */
 
 <section class="profile-section">
     <h3>活動歴・実績</h3>
