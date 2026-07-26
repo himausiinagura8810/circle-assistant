@@ -10,6 +10,7 @@ const circleInfo = {
     space: "スペース未定",
     message: "遊びに来てください！"
 };
+
 /* ========================================
    作者情報
 ======================================== */
@@ -23,20 +24,31 @@ const profileInfo = {
         "イラスト制作",
         "同人誌制作"
     ],
-       tools: [
+
+    tools: [
         "CLIP STUDIO PAINT",
         "Photoshop",
         "Blender"
     ],
-/* ========================================
-   作者の活動歴・実績
-======================================== */
 
-achievements: [
-    "同人誌即売会への参加",
-    "漫画・イラスト作品の制作",
-    "キャラクターデザインの制作"
-],
+    favorites: [
+        "ハイエナ",
+        "筋肉質なキャラクター",
+        "ギャグ漫画"
+    ],
+
+    specialties: [
+        "キャラクターデザイン",
+        "漫画の構成",
+        "デジタルイラスト"
+    ],
+
+    achievements: [
+        "同人誌即売会への参加",
+        "漫画・イラスト作品の制作",
+        "キャラクターデザインの制作"
+    ],
+
     favoriteGenre:
         "ギャグ漫画や、個性的なキャラクターを中心に制作しています。",
 
@@ -341,6 +353,26 @@ function createProfileHTML() {
             return `<li>${tool}</li>`;
         })
         .join("");
+   /* ========================================
+   好きなものの一覧を作る
+======================================== */
+
+const favoriteItems = profileInfo.favorites
+    .map((favorite) => {
+        return `<li>${favorite}</li>`;
+    })
+    .join("");
+
+
+/* ========================================
+   得意分野の一覧を作る
+======================================== */
+
+const specialtyItems = profileInfo.specialties
+    .map((specialty) => {
+        return `<li>${specialty}</li>`;
+    })
+    .join("");
 /* ========================================
    活動歴・実績の一覧を作る
 ======================================== */
@@ -380,6 +412,23 @@ const achievementItems = profileInfo.achievements
     <dd>
         <ul class="profile-activities">
             ${toolItems}
+        </ul>
+    </dd>
+</div>
+<div>
+    <dt>好きなもの</dt>
+    <dd>
+        <ul class="profile-activities">
+            ${favoriteItems}
+        </ul>
+    </dd>
+</div>
+
+<div>
+    <dt>得意分野</dt>
+    <dd>
+        <ul class="profile-activities">
+            ${specialtyItems}
         </ul>
     </dd>
 </div>
