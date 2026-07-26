@@ -23,6 +23,11 @@ const profileInfo = {
         "イラスト制作",
         "同人誌制作"
     ],
+       tools: [
+        "CLIP STUDIO PAINT",
+        "Photoshop",
+        "Blender"
+    ],
 /* ========================================
    作者の活動歴・実績
 ======================================== */
@@ -327,6 +332,15 @@ function createProfileHTML() {
             return `<li>${activity}</li>`;
         })
         .join("");
+ /* ========================================
+       使用ソフトの一覧を作る
+　======================================== */
+
+    const toolItems = profileInfo.tools
+        .map((tool) => {
+            return `<li>${tool}</li>`;
+        })
+        .join("");
 /* ========================================
    活動歴・実績の一覧を作る
 ======================================== */
@@ -361,6 +375,14 @@ const achievementItems = profileInfo.achievements
                         </ul>
                     </dd>
                 </div>
+                <div>
+    <dt>使用ソフト</dt>
+    <dd>
+        <ul class="profile-activities">
+            ${toolItems}
+        </ul>
+    </dd>
+</div>
             </dl>
 
 <section class="profile-section">
