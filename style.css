@@ -1119,6 +1119,53 @@ button:active {
     line-height: 1.8;
 }
 /* ========================================
+   作者紹介のタグ一覧
+======================================== */
+
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.profile-tags li {
+    display: inline-block;
+
+    margin: 0;
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+
+/* ========================================
+   好きなもののタグ
+======================================== */
+
+.profile-favorite-tags li {
+    color: #7a4b00;
+    background-color: #fff0c7;
+}
+
+
+/* ========================================
+   得意分野のタグ
+======================================== */
+
+.profile-specialty-tags li {
+    color: #155e3b;
+    background-color: #dff5e9;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
