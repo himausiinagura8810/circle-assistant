@@ -418,7 +418,7 @@ const achievementItems = profileInfo.achievements
 <div>
     <dt>好きなもの</dt>
     <dd>
-        <ul class="profile-activities">
+        <ul class="profile-tags profile-favorite-tags">
             ${favoriteItems}
         </ul>
     </dd>
@@ -427,7 +427,7 @@ const achievementItems = profileInfo.achievements
 <div>
     <dt>得意分野</dt>
     <dd>
-        <ul class="profile-activities">
+        <ul class="profile-tags profile-specialty-tags">
             ${specialtyItems}
         </ul>
     </dd>
