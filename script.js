@@ -214,9 +214,9 @@ function openScreen(screenName) {
     document.getElementById("detail-message").textContent =
         selectedScreen.message;
 
-    /* ========================================
+/* ========================================
    詳細画面に表示する内容を選ぶ
-   ======================================== */
+======================================== */
 
 if (screenName === "newbook") {
     document.getElementById("detail-content").innerHTML =
@@ -225,6 +225,10 @@ if (screenName === "newbook") {
 } else if (screenName === "backlist") {
     document.getElementById("detail-content").innerHTML =
         createBacklistHTML();
+
+} else if (screenName === "eventmenu") {
+    document.getElementById("detail-content").innerHTML =
+        createEventMenuHTML();
 
 } else if (screenName === "profile") {
     document.getElementById("detail-content").innerHTML =
@@ -705,6 +709,49 @@ function renderCircleInfo() {
         <p class="circle-info-message">
             ${circleInfo.message}
         </p>
+    `;
+}
+/* ========================================
+   お品書きページ生成
+======================================== */
+
+function createEventMenuHTML() {
+    return `
+        <section class="event-menu-card">
+
+            <p class="event-menu-label">
+                イベントモード
+            </p>
+
+            <h2 class="event-menu-title">
+                ${eventMenu.title}
+            </h2>
+
+            <p class="event-menu-introduction">
+                ${eventMenu.introduction}
+            </p>
+
+            <button
+                class="event-menu-image-button"
+                type="button"
+                onclick="openBookCover(
+                    '${eventMenu.image}',
+                    '${eventMenu.title}'
+                )"
+                aria-label="お品書き画像を拡大表示"
+            >
+                <img
+                    class="event-menu-image"
+                    src="${eventMenu.image}"
+                    alt="${eventMenu.imageAlt}"
+                >
+            </button>
+
+            <p class="event-menu-help">
+                画像をタップすると拡大できます
+            </p>
+
+        </section>
     `;
 }
 /* ========================================
