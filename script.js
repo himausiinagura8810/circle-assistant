@@ -962,20 +962,21 @@ function createRecommendationHTML(recommendation) {
 ======================================== */
 
 function getEventMenuCategoryClass(category) {
+
     if (category === "新刊") {
-        return "event-category-new";
+        return "badge-new";
     }
 
     if (category === "既刊") {
-        return "event-category-backlist";
+        return "badge-backlist";
     }
 
     if (category === "グッズ") {
-        return "event-category-goods";
+        return "badge-goods";
     }
 
     if (category === "無料配布") {
-        return "event-category-free";
+        return "badge-free";
     }
 
     return "";
@@ -1130,12 +1131,7 @@ function createPriceCategoryHTML(category) {
         getEventMenuCategoryClass(category);
 
     return `
-        <span
-            class="
-                event-price-category
-                ${categoryClass}
-            "
-        >
+        <span class="book-badge ${categoryClass}">
             ${category}
         </span>
     `;
