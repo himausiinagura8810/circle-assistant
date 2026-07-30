@@ -1417,9 +1417,30 @@ button:active {
     background-color: #ffe2bf;
 }
 /* ========================================
-   画面幅が狭い場合
+   お品書きのおすすめ表示
 ======================================== */
 
+.event-recommendation {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 10px;
+    padding: 6px 12px;
+
+    color: #7a4b00;
+    background-color: #fff0c7;
+
+    border-left: 5px solid #d47a16;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+/* ========================================
+   画面幅が狭い場合
+======================================== */
 @media (max-width: 700px) {
       /* ========================================
        お品書き頒布物カードのスマートフォン表示
