@@ -117,7 +117,7 @@ const backlistBooks = [
            "全年齢"
     ],
 
-       status: "残り僅か",
+       status: "残りわずか",
 
        special: [
            "描き下ろしペーパー",
