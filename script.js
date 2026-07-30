@@ -106,21 +106,23 @@ const socialLinks = [
 
 const backlistBooks = [
     {
-        title: "ドMの品格",
-        price: "500円",
-        pages: "32P",
-        genre: "ギャグ",
-        image: "picture/backbook1.png",
+       title: "ドMの品格",
+       price: "500円",
+       pages: "32P",
+       genre: "ギャグ",
+       image: "picture/backbook1.png",
 
-        badges: [
-            "既刊",
-            "全年齢"
-        ],
+       badges: [
+           "既刊",
+           "全年齢"
+    ],
 
-        special: [
-            "描き下ろしペーパー",
-            "イベント限定ポストカード"
-        ],
+       status: "在庫あり",
+
+       special: [
+           "描き下ろしペーパー",
+           "イベント限定ポストカード"
+    ],
 
         description:
             "レスラー達の日常を描いたギャグ漫画です。"
@@ -136,7 +138,7 @@ const backlistBooks = [
         badges: [
             "準備中"
         ],
-
+        status: "準備中",
         description:
             "こちらは準備中です。"
     },
@@ -146,8 +148,12 @@ const backlistBooks = [
         price: "未定",
         pages: "未定",
         genre: "未定",
-        image: "picture/backbook3.png",
+        image: "picture/backbook2.png",
 
+        badges: [
+            "準備中"
+        ],
+        status: "準備中",
         description:
             "こちらは準備中です。"
     }
@@ -170,6 +176,8 @@ const newBook = {
         "新刊",
         "全年齢"
     ],
+
+    status: "在庫あり",
 
     special: [
         "描き下ろしペーパー"
@@ -842,7 +850,39 @@ function getEventMenuItems() {
         })
     ];
 }
+/* ========================================
+   在庫状況を表示する
+======================================== */
 
+function createStockStatusHTML(status) {
+    if (!status) {
+        return "";
+    }
+
+    let statusClass = "";
+
+    if (status === "在庫あり") {
+        statusClass = "stock-available";
+    }
+
+    if (status === "残りわずか") {
+        statusClass = "stock-low";
+    }
+
+    if (status === "完売") {
+        statusClass = "stock-sold-out";
+    }
+
+    if (status === "準備中") {
+        statusClass = "stock-coming-soon";
+    }
+
+    return `
+        <p class="stock-status ${statusClass}">
+            ${status}
+        </p>
+    `;
+}
 /* ========================================
    お品書きの頒布物カードを作る
 ======================================== */
@@ -871,7 +911,7 @@ function createEventMenuItemHTML(item) {
                 </p>
 
                 ${createEventMenuBadgeHTML(item.badges)}
-
+                ${createStockStatusHTML(item.status)}
                 <h3 class="event-menu-item-title">
                     ${item.title}
                 </h3>
