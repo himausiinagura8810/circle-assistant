@@ -843,7 +843,6 @@ function getEventMenuItems() {
     ];
 }
 
-
 /* ========================================
    お品書きの頒布物カードを作る
 ======================================== */
@@ -871,7 +870,7 @@ function createEventMenuItemHTML(item) {
                     ${item.category}
                 </p>
 
-                ${createBadgeHTML(item.badges)}
+                ${createEventMenuBadgeHTML(item.badges)}
 
                 <h3 class="event-menu-item-title">
                     ${item.title}
@@ -907,8 +906,21 @@ function createEventMenuItemHTML(item) {
         </article>
     `;
 }
+/* ========================================
+   お品書き用のバッジを作る
+======================================== */
 
+function createEventMenuBadgeHTML(badges) {
+    if (!badges || badges.length === 0) {
+        return "";
+    }
 
+    const eventMenuBadges = badges.filter((badge) => {
+        return badge !== "新刊" && badge !== "既刊";
+    });
+
+    return createBadgeHTML(eventMenuBadges);
+}
 /* ========================================
    お品書きページ生成
 ======================================== */
