@@ -10,13 +10,15 @@ const circleInfo = {
     space: "スペース未定",
     message: "遊びに来てください！"
 };
+
+
 /* ========================================
    イベントモード・お品書き情報
 ======================================== */
 
 const eventMenu = {
     title: "イベントお品書き",
-    image: "oshinagaki.png",
+    image: "picture/oshinagaki.png",
     imageAlt: "イベントのお品書き",
 
     introduction:
@@ -25,6 +27,7 @@ const eventMenu = {
     sectionTitle:
         "本日の頒布物"
 };
+
 
 /* ========================================
    作者情報
@@ -70,9 +73,12 @@ const profileInfo = {
     message:
         "作品についての感想や質問など、気軽に声をかけてください！"
 };
+
+
 /* ========================================
    SNSデータ
 ======================================== */
+
 const socialLinks = [
     {
         name: "X",
@@ -92,41 +98,45 @@ const socialLinks = [
         description: "通販ページはこちら"
     }
 ];
-/* ==========================
+
+
+/* ========================================
    既刊データ
-========================== */
+======================================== */
 
 const backlistBooks = [
-
     {
-    title: "ドMの品格",
-    price: "500円",
-    pages: "32P",
-    genre: "ギャグ",
-    image: "backbook1.png",
-    badges: [
-    "既刊",
-    "全年齢"
-],
+        title: "ドMの品格",
+        price: "500円",
+        pages: "32P",
+        genre: "ギャグ",
+        image: "picture/backbook1.png",
 
-    special: [
-        "描き下ろしペーパー",
-        "イベント限定ポストカード"
-    ],
+        badges: [
+            "既刊",
+            "全年齢"
+        ],
 
-    description:
-        "レスラー達の日常を描いたギャグ漫画です。"
-},
+        special: [
+            "描き下ろしペーパー",
+            "イベント限定ポストカード"
+        ],
+
+        description:
+            "レスラー達の日常を描いたギャグ漫画です。"
+    },
 
     {
         title: "準備中",
         price: "未定",
         pages: "未定",
         genre: "未定",
-        image: "backbook2.png",
-　　　　　badges: [
-         "準備中"
-],
+        image: "picture/backbook2.png",
+
+        badges: [
+            "準備中"
+        ],
+
         description:
             "こちらは準備中です。"
     },
@@ -136,13 +146,17 @@ const backlistBooks = [
         price: "未定",
         pages: "未定",
         genre: "未定",
-        image: "backbook3.png",
+        image: "picture/backbook3.png",
 
         description:
             "こちらは準備中です。"
     }
-
 ];
+
+
+/* ========================================
+   新刊データ
+======================================== */
 
 const newBook = {
     title: "作品タイトル",
@@ -150,11 +164,13 @@ const newBook = {
     pages: "未定",
     genre: "未定",
     release: "イベント当日",
-    image: "newbook-cover.png",
- 　　badges: [
-    "新刊",
-    "全年齢"
-],
+    image: "picture/newbook-cover.png",
+
+    badges: [
+        "新刊",
+        "全年齢"
+    ],
+
     special: [
         "描き下ろしペーパー"
     ],
@@ -162,48 +178,53 @@ const newBook = {
     description:
         "ここに新刊のあらすじや、おすすめポイントを掲載します。"
 };
-const screens = {
-    newbook: {
-    title: "新刊情報",
-    message: "こちらが今回の新刊です！",
-    speech: "こいつが今回の新刊だ！　ぜひ見ていってくれ！",
-    content: ""
-},
 
-    backlist: {
-    title: "既刊情報",
-    message: "これまでに頒布した作品をご紹介します。",
-    speech: "前に作った本も、ここから確認できるぞ！",
-    content: ""
-},
+
 /* ========================================
-   お品書き画面
+   画面データ
 ======================================== */
 
-eventmenu: {
-    title: "イベントお品書き",
-    message: "本日の頒布物をご紹介します！",
-    speech: "今日のお品書きだ！　気になる本を探してみてくれ！",
-    content: ""
-},
-    /* ========================================
-   作者紹介画面
-   ======================================== */
+const screens = {
+    newbook: {
+        title: "新刊情報",
+        message: "こちらが今回の新刊です！",
+        speech: "こいつが今回の新刊だ！ ぜひ見ていってくれ！",
+        content: ""
+    },
 
-profile: {
-    title: "作者紹介",
-    message: "作者についてご紹介します！",
-    speech: "作者本人にも、気軽に声をかけてみてくれ！",
-    content: ""
-},
+    backlist: {
+        title: "既刊情報",
+        message: "これまでに頒布した作品をご紹介します。",
+        speech: "前に作った本も、ここから確認できるぞ！",
+        content: ""
+    },
+
+    eventmenu: {
+        title: "イベントお品書き",
+        message: "本日の頒布物をご紹介します！",
+        speech: "今日のお品書きだ！ 気になる本を探してみてくれ！",
+        content: ""
+    },
+
+    profile: {
+        title: "作者紹介",
+        message: "作者についてご紹介します！",
+        speech: "作者本人にも、気軽に声をかけてみてくれ！",
+        content: ""
+    },
 
     sns: {
-    title: "SNS",
-    message: "SNSや通販ページはこちらです。",
-    speech: "活動情報を見たいなら、ここを確認してくれ！",
-    content: ""
-}
+        title: "SNS",
+        message: "SNSや通販ページはこちらです。",
+        speech: "活動情報を見たいなら、ここを確認してくれ！",
+        content: ""
+    }
 };
+
+
+/* ========================================
+   詳細画面を開く
+======================================== */
 
 function openScreen(screenName) {
     const selectedScreen = screens[screenName];
@@ -214,34 +235,35 @@ function openScreen(screenName) {
     document.getElementById("detail-message").textContent =
         selectedScreen.message;
 
-/* ========================================
-   詳細画面に表示する内容を選ぶ
-======================================== */
 
-if (screenName === "newbook") {
-    document.getElementById("detail-content").innerHTML =
-        createNewBookHTML();
+    /* ========================================
+       詳細画面に表示する内容を選ぶ
+    ======================================== */
 
-} else if (screenName === "backlist") {
-    document.getElementById("detail-content").innerHTML =
-        createBacklistHTML();
+    if (screenName === "newbook") {
+        document.getElementById("detail-content").innerHTML =
+            createNewBookHTML();
 
-} else if (screenName === "eventmenu") {
-    document.getElementById("detail-content").innerHTML =
-        createEventMenuHTML();
+    } else if (screenName === "backlist") {
+        document.getElementById("detail-content").innerHTML =
+            createBacklistHTML();
 
-} else if (screenName === "profile") {
-    document.getElementById("detail-content").innerHTML =
-        createProfileHTML();
+    } else if (screenName === "eventmenu") {
+        document.getElementById("detail-content").innerHTML =
+            createEventMenuHTML();
 
-} else if (screenName === "sns") {
-    document.getElementById("detail-content").innerHTML =
-        createSocialLinksHTML();
+    } else if (screenName === "profile") {
+        document.getElementById("detail-content").innerHTML =
+            createProfileHTML();
 
-} else {
-    document.getElementById("detail-content").innerHTML =
-        selectedScreen.content;
-}
+    } else if (screenName === "sns") {
+        document.getElementById("detail-content").innerHTML =
+            createSocialLinksHTML();
+
+    } else {
+        document.getElementById("detail-content").innerHTML =
+            selectedScreen.content;
+    }
 
     document.getElementById("detail-speech").textContent =
         selectedScreen.speech;
@@ -262,6 +284,11 @@ if (screenName === "newbook") {
         .classList.add("active");
 }
 
+
+/* ========================================
+   ホーム画面へ戻る
+======================================== */
+
 function goHome() {
     document.getElementById("detail-screen")
         .classList.remove("active");
@@ -270,6 +297,11 @@ function goHome() {
         .classList.add("active");
 }
 
+
+/* ========================================
+   新刊表紙の拡大表示
+======================================== */
+
 function openCover() {
     const modal =
         document.getElementById("cover-modal");
@@ -277,6 +309,11 @@ function openCover() {
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
 }
+
+
+/* ========================================
+   画像の外側を押して閉じる
+======================================== */
 
 function closeCover(event) {
     if (
@@ -293,6 +330,11 @@ function closeCover(event) {
     modal.setAttribute("aria-hidden", "true");
 }
 
+
+/* ========================================
+   閉じるボタンで画像を閉じる
+======================================== */
+
 function forceCloseCover() {
     const modal =
         document.getElementById("cover-modal");
@@ -300,6 +342,12 @@ function forceCloseCover() {
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
 }
+
+
+/* ========================================
+   新刊ページ生成
+======================================== */
+
 function createNewBookHTML() {
     return `
         <article class="book-card">
@@ -318,7 +366,9 @@ function createNewBookHTML() {
             </button>
 
             <div class="book-info">
-　　　　　　　　　　${createBadgeHTML(newBook.badges)}
+
+                ${createBadgeHTML(newBook.badges)}
+
                 <h2 class="book-title">
                     ${newBook.title}
                 </h2>
@@ -362,6 +412,8 @@ function createNewBookHTML() {
         </article>
     `;
 }
+
+
 /* ========================================
    作者紹介ページ生成
 ======================================== */
@@ -372,44 +424,51 @@ function createProfileHTML() {
             return `<li>${activity}</li>`;
         })
         .join("");
- /* ========================================
+
+
+    /* ========================================
        使用ソフトの一覧を作る
-　======================================== */
+    ======================================== */
 
     const toolItems = profileInfo.tools
         .map((tool) => {
             return `<li>${tool}</li>`;
         })
         .join("");
-   /* ========================================
-   好きなものの一覧を作る
-======================================== */
-
-const favoriteItems = profileInfo.favorites
-    .map((favorite) => {
-        return `<li>${favorite}</li>`;
-    })
-    .join("");
 
 
-/* ========================================
-   得意分野の一覧を作る
-======================================== */
+    /* ========================================
+       好きなものの一覧を作る
+    ======================================== */
 
-const specialtyItems = profileInfo.specialties
-    .map((specialty) => {
-        return `<li>${specialty}</li>`;
-    })
-    .join("");
-/* ========================================
-   活動歴・実績の一覧を作る
-======================================== */
+    const favoriteItems = profileInfo.favorites
+        .map((favorite) => {
+            return `<li>${favorite}</li>`;
+        })
+        .join("");
 
-const achievementItems = profileInfo.achievements
-    .map((achievement) => {
-        return `<li>${achievement}</li>`;
-    })
-    .join("");
+
+    /* ========================================
+       得意分野の一覧を作る
+    ======================================== */
+
+    const specialtyItems = profileInfo.specialties
+        .map((specialty) => {
+            return `<li>${specialty}</li>`;
+        })
+        .join("");
+
+
+    /* ========================================
+       活動歴・実績の一覧を作る
+    ======================================== */
+
+    const achievementItems = profileInfo.achievements
+        .map((achievement) => {
+            return `<li>${achievement}</li>`;
+        })
+        .join("");
+
     return `
         <section class="profile-card">
 
@@ -422,6 +481,7 @@ const achievementItems = profileInfo.achievements
             </h2>
 
             <dl class="profile-details">
+
                 <div>
                     <dt>サークル名</dt>
                     <dd>${profileInfo.circle}</dd>
@@ -429,46 +489,54 @@ const achievementItems = profileInfo.achievements
 
                 <div>
                     <dt>主な活動</dt>
+
                     <dd>
                         <ul class="profile-activities">
                             ${activityItems}
                         </ul>
                     </dd>
                 </div>
-                <div>
-    <dt>使用ソフト</dt>
-    <dd>
-        <ul class="profile-activities">
-            ${toolItems}
-        </ul>
-    </dd>
-</div>
-<div>
-    <dt>好きなもの</dt>
-    <dd>
-        <ul class="profile-tags profile-favorite-tags">
-            ${favoriteItems}
-        </ul>
-    </dd>
-</div>
 
-<div>
-    <dt>得意分野</dt>
-    <dd>
-        <ul class="profile-tags profile-specialty-tags">
-            ${specialtyItems}
-        </ul>
-    </dd>
-</div>
+                <div>
+                    <dt>使用ソフト</dt>
+
+                    <dd>
+                        <ul class="profile-activities">
+                            ${toolItems}
+                        </ul>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>好きなもの</dt>
+
+                    <dd>
+                        <ul class="profile-tags profile-favorite-tags">
+                            ${favoriteItems}
+                        </ul>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>得意分野</dt>
+
+                    <dd>
+                        <ul class="profile-tags profile-specialty-tags">
+                            ${specialtyItems}
+                        </ul>
+                    </dd>
+                </div>
+
             </dl>
 
-<section class="profile-section">
-    <h3>活動歴・実績</h3>
+            <section class="profile-section">
+                <h3>活動歴・実績</h3>
 
-    <ul class="profile-achievements">
-        ${achievementItems}
-    </ul>
-</section>
+                <ul class="profile-achievements">
+                    ${achievementItems}
+                </ul>
+            </section>
+
             <section class="profile-section">
                 <h3>作風・ジャンル</h3>
 
@@ -488,6 +556,12 @@ const achievementItems = profileInfo.achievements
         </section>
     `;
 }
+
+
+/* ========================================
+   既刊ページ生成
+======================================== */
+
 function createBacklistHTML() {
     return backlistBooks
         .map((book) => {
@@ -508,7 +582,9 @@ function createBacklistHTML() {
                     </button>
 
                     <div class="backlist-info">
-　　　　　　　　　　　　　　　　${createBadgeHTML(book.badges)}
+
+                        ${createBadgeHTML(book.badges)}
+
                         <h2>${book.title}</h2>
 
                         <dl>
@@ -531,7 +607,7 @@ function createBacklistHTML() {
                         ${createSpecialHTML(book.special)}
 
                         <p>
-                        ${book.description}
+                            ${book.description}
                         </p>
 
                     </div>
@@ -541,6 +617,12 @@ function createBacklistHTML() {
         })
         .join("");
 }
+
+
+/* ========================================
+   指定した画像を拡大表示
+======================================== */
+
 function openBookCover(image, title) {
     const modal =
         document.getElementById("cover-modal");
@@ -554,6 +636,12 @@ function openBookCover(image, title) {
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
 }
+
+
+/* ========================================
+   購入特典を表示
+======================================== */
+
 function createSpecialHTML(specialItems) {
     if (!specialItems || specialItems.length === 0) {
         return "";
@@ -575,6 +663,12 @@ function createSpecialHTML(specialItems) {
         </section>
     `;
 }
+
+
+/* ========================================
+   作品バッジを表示
+======================================== */
+
 function createBadgeHTML(badges) {
     if (!badges || badges.length === 0) {
         return "";
@@ -598,6 +692,12 @@ function createBadgeHTML(badges) {
         </div>
     `;
 }
+
+
+/* ========================================
+   バッジカラー判定
+======================================== */
+
 function getBadgeClass(badge) {
     if (badge === "新刊") {
         return "badge-new";
@@ -621,6 +721,12 @@ function getBadgeClass(badge) {
 
     return "";
 }
+
+
+/* ========================================
+   SNSページ生成
+======================================== */
+
 function createSocialLinksHTML() {
     const linkItems = socialLinks
         .map((link) => {
@@ -661,6 +767,8 @@ function createSocialLinksHTML() {
         </section>
     `;
 }
+
+
 /* ========================================
    サークル情報の表示
 ======================================== */
@@ -682,35 +790,40 @@ function renderCircleInfo() {
             ${circleInfo.name}
         </h2>
 
-<dl class="circle-info-details">
-    <div>
-        <dt>参加イベント</dt>
-        <dd>${circleInfo.event}</dd>
-    </div>
+        <dl class="circle-info-details">
 
-    <div>
-        <dt>開催日</dt>
-        <dd>${circleInfo.date}</dd>
-    </div>
+            <div>
+                <dt>参加イベント</dt>
+                <dd>${circleInfo.event}</dd>
+            </div>
 
-    <div>
-        <dt>会場</dt>
-        <dd>${circleInfo.venue}</dd>
-    </div>
+            <div>
+                <dt>開催日</dt>
+                <dd>${circleInfo.date}</dd>
+            </div>
 
-    <div>
-        <dt>スペース</dt>
-        <dd class="circle-info-space">
-            ${circleInfo.space}
-        </dd>
-    </div>
-</dl>
+            <div>
+                <dt>会場</dt>
+                <dd>${circleInfo.venue}</dd>
+            </div>
+
+            <div>
+                <dt>スペース</dt>
+
+                <dd class="circle-info-space">
+                    ${circleInfo.space}
+                </dd>
+            </div>
+
+        </dl>
 
         <p class="circle-info-message">
             ${circleInfo.message}
         </p>
     `;
 }
+
+
 /* ========================================
    お品書きページ生成
 ======================================== */
@@ -754,6 +867,8 @@ function createEventMenuHTML() {
         </section>
     `;
 }
+
+
 /* ========================================
    初期表示
 ======================================== */
