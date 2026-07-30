@@ -907,12 +907,30 @@ function createRecommendationHTML(recommendation) {
     `;
 }
 /* ========================================
+   お品書きカードの状態クラスを作る
+======================================== */
+
+function getEventMenuItemClass(status) {
+    if (status === "完売") {
+        return "event-menu-item-sold-out";
+    }
+
+    if (status === "残りわずか") {
+        return "event-menu-item-low-stock";
+    }
+
+    return "";
+}
+/* ========================================
    お品書きの頒布物カードを作る
 ======================================== */
 
 function createEventMenuItemHTML(item) {
+    const itemStatusClass =
+        getEventMenuItemClass(item.status);
+
     return `
-        <article class="event-menu-item">
+        <article class="event-menu-item ${itemStatusClass}">
 
             <button
                 class="backlist-cover-button"
@@ -926,7 +944,14 @@ function createEventMenuItemHTML(item) {
                     alt="${item.title}の表紙"
                 >
             </button>
-
+            ${item.status === "完売"
+                ? `
+                    <p class="event-menu-sold-out-label">
+                        完売
+                    </p>
+                `
+                : ""
+            }
             <div class="event-menu-item-info">
 
                 <p class="event-menu-item-category">
