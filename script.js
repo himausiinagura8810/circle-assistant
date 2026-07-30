@@ -823,7 +823,75 @@ function renderCircleInfo() {
     `;
 }
 
+/* ========================================
+   お品書き用の頒布物データを作る
+======================================== */
 
+function getEventMenuItems() {
+    return [
+        {
+            ...newBook,
+            category: "新刊"
+        },
+
+        ...backlistBooks.map((book) => {
+            return {
+                ...book,
+                category: "既刊"
+            };
+        })
+    ];
+}
+/* ========================================
+   お品書きの頒布物カードを作る
+======================================== */
+
+function createEventMenuItemHTML(item) {
+    return `
+        <article class="event-menu-item">
+
+            <img
+                class="event-menu-item-image"
+                src="${item.image}"
+                alt="${item.title}の表紙"
+            >
+
+            <div class="event-menu-item-info">
+
+                <p class="event-menu-item-category">
+                    ${item.category}
+                </p>
+
+                <h3 class="event-menu-item-title">
+                    ${item.title}
+                </h3>
+
+                <dl class="event-menu-item-details">
+                    <div>
+                        <dt>価格</dt>
+                        <dd>${item.price}</dd>
+                    </div>
+
+                    <div>
+                        <dt>ページ数</dt>
+                        <dd>${item.pages}</dd>
+                    </div>
+
+                    <div>
+                        <dt>ジャンル</dt>
+                        <dd>${item.genre}</dd>
+                    </div>
+                </dl>
+
+                <p class="event-menu-item-description">
+                    ${item.description}
+                </p>
+
+            </div>
+
+        </article>
+    `;
+}
 /* ========================================
    お品書きページ生成
 ======================================== */
