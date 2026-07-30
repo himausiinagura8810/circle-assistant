@@ -20,7 +20,6 @@ body {
     overflow: hidden;
 }
 
-
 /* ========================================
    アプリ全体
 ======================================== */
@@ -31,7 +30,6 @@ body {
     height: 100dvh;
     overflow: hidden;
 }
-
 
 /* ========================================
    画面切り替え
@@ -48,18 +46,15 @@ body {
     display: grid;
 }
 
-
 /* トップ画面 */
 #home-screen {
     grid-template-columns: 42% 58%;
 }
 
-
 /* 詳細画面 */
 #detail-screen {
     grid-template-columns: 60% 40%;
 }
-
 
 /* ========================================
    左側のパネル
@@ -79,7 +74,6 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
-
 
 /* ========================================
    左側の見出しと説明文
@@ -101,29 +95,21 @@ body {
     line-height: 1.6;
 }
 
-
 /* ========================================
    トップ画面のメニューボタン
 ======================================== */
 
-/* お品書きボタンを横幅いっぱいにする */
-
-.menu-button-event {
-    grid-column: 1 / -1;
-
-    min-height: 86px;
-
-    background-color: #2478c5;
-
-    font-size: 26px;
-}/* お品書きボタンの押したときの見た目 */
-.menu-button-event:active {
-    transform: scale(0.98);
-}
 .menu-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    width: 100%;
+}
+
+.menu-buttons > button {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
 }
 
 .menu-button-event {
@@ -134,13 +120,13 @@ body {
 
     font-size: 26px;
 }
+
 button {
     min-height: 74px;
-
     padding: 16px;
 
     background-color: #4a90e2;
-    color: white;
+    color: #ffffff;
 
     border: none;
     border-radius: 16px;
@@ -154,6 +140,10 @@ button {
 
 button:active {
     transform: scale(0.97);
+}
+
+.menu-button-event:active {
+    transform: scale(0.98);
 }
 
 /* ========================================
@@ -173,12 +163,13 @@ button:active {
     font-size: 18px;
 }
 
-
 /* ========================================
    キャラクター表示部分
 ======================================== */
 
 .character-panel {
+    position: relative;
+
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -201,12 +192,10 @@ button:active {
     object-position: center bottom;
 }
 
-
 /* 詳細画面のキャラクターだけ少し小さくする */
 #detail-screen .character-image {
     max-width: 400px;
 }
-
 
 /* ========================================
    詳細情報全体の白いパネル
@@ -234,7 +223,6 @@ button:active {
     line-height: 1.6;
 }
 
-
 /* ========================================
    新刊カード
 ======================================== */
@@ -249,7 +237,6 @@ button:active {
     gap: 24px;
     align-items: start;
 }
-
 
 /* ========================================
    新刊表紙
@@ -267,7 +254,6 @@ button:active {
     border-radius: 12px;
 }
 
-
 /* ========================================
    新刊の文章部分
 ======================================== */
@@ -276,7 +262,6 @@ button:active {
     min-width: 0;
     overflow-wrap: anywhere;
 }
-
 
 /* 作品タイトル */
 .book-title {
@@ -288,7 +273,6 @@ button:active {
     font-size: 28px;
     line-height: 1.4;
 }
-
 
 /* ========================================
    価格・ページ数などの情報欄
@@ -305,7 +289,6 @@ button:active {
     border-radius: 10px;
 }
 
-
 /* 1項目ずつ上下に並べる */
 .book-details div {
     display: block;
@@ -315,12 +298,10 @@ button:active {
     border-bottom: 1px solid #dddddd;
 }
 
-
 /* 最後の項目だけ下線を消す */
 .book-details div:last-child {
     border-bottom: none;
 }
-
 
 /* 「価格」「ページ数」などの項目名 */
 .book-details dt {
@@ -332,7 +313,6 @@ button:active {
     font-weight: bold;
     letter-spacing: 0.08em;
 }
-
 
 /* 「未定」「イベント当日」などの内容 */
 .book-details dd {
@@ -348,7 +328,6 @@ button:active {
     white-space: normal;
     overflow-wrap: anywhere;
 }
-
 
 /* ========================================
    作品紹介欄
@@ -420,9 +399,6 @@ button:active {
     transform: rotate(45deg);
 }
 
-.character-panel {
-    position: relative;
-}
 /* ========================================
    キャラクターのリアクション
 ======================================== */
@@ -476,7 +452,6 @@ button:active {
 .cover-button:active .book-cover {
     box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
 }
-
 
 /* ========================================
    表紙の拡大表示
@@ -569,7 +544,6 @@ button:active {
     }
 }
 
-
 /* 左側の内容を少し横から登場させる */
 .screen.active .menu-panel,
 .screen.active .detail-panel {
@@ -588,7 +562,6 @@ button:active {
     }
 }
 
-
 /* キャラクターを少し遅れて表示する */
 .screen.active .character-panel {
     animation: character-panel-in 0.45s ease-out;
@@ -605,7 +578,6 @@ button:active {
         transform: translateY(0);
     }
 }
-
 
 /* 表紙拡大画面も滑らかに表示する */
 .cover-modal.open {
@@ -658,7 +630,6 @@ button:active {
     box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
 }
 
-
 /* ========================================
    既刊表紙のボタン
 ======================================== */
@@ -684,7 +655,6 @@ button:active {
     transform: scale(0.97);
 }
 
-
 /* ========================================
    既刊表紙
 ======================================== */
@@ -701,7 +671,6 @@ button:active {
     background-color: #f2f2f2;
     border-radius: 10px;
 }
-
 
 /* ========================================
    既刊の文章部分
@@ -720,7 +689,6 @@ button:active {
     font-size: 24px;
     line-height: 1.4;
 }
-
 
 /* ========================================
    価格・ページ数・ジャンル
@@ -756,7 +724,6 @@ button:active {
 
     overflow-wrap: anywhere;
 }
-
 
 /* ========================================
    既刊の紹介文
@@ -855,11 +822,11 @@ button:active {
     background-color: #c63d3d;
 }
 .badge-goods {
-    background: #8e5bb7;
+    background-color: #8e5bb7;
 }
 
 .badge-free {
-    background: #2f8f5b;
+    background-color: #2f8f5b;
 }
 /* ========================================
    SNSリンク
@@ -1055,7 +1022,6 @@ button:active {
     line-height: 1.4;
 }
 
-
 /* ========================================
    作者紹介の基本情報
 ======================================== */
@@ -1095,7 +1061,6 @@ button:active {
     margin: 3px 0;
 }
 
-
 /* ========================================
    作者紹介の作風・ジャンル
 ======================================== */
@@ -1119,7 +1084,6 @@ button:active {
 
     line-height: 1.8;
 }
-
 
 /* ========================================
    作者紹介のひとこと
@@ -1173,7 +1137,6 @@ button:active {
     line-height: 1.3;
 }
 
-
 /* ========================================
    好きなもののタグ
 ======================================== */
@@ -1182,7 +1145,6 @@ button:active {
     color: #7a4b00;
     background-color: #fff0c7;
 }
-
 
 /* ========================================
    得意分野のタグ
@@ -1258,12 +1220,13 @@ button:active {
     gap: 18px;
 }
 
-
 /* ========================================
    お品書きの頒布物カード
 ======================================== */
 
 .event-menu-item {
+    position: relative;
+
     display: grid;
     grid-template-columns: 140px minmax(0, 1fr);
     gap: 18px;
@@ -1469,24 +1432,14 @@ button:active {
    お品書きカードの在庫状態
 ======================================== */
 
-.event-menu-item {
-    position: relative;
-}
-
-/* カテゴリー色 */
-.event-menu-item.event-category-goods {
-    border-left-color: #8e5bb7;
-}
-
 /* 在庫状態はカテゴリー色より後に置く */
 .event-menu-item-low-stock {
     border-left-color: #d47a16;
 }
 
 .event-menu-item-sold-out {
-    border-left-color: #c63d3d;
-}
     background-color: #f3f3f3;
+    border-left-color: #c63d3d;
 }
 
 .event-menu-item-sold-out .event-menu-item-image {
@@ -1497,7 +1450,6 @@ button:active {
 .event-menu-item-sold-out .event-menu-item-info {
     opacity: 0.72;
 }
-
 
 /* ========================================
    完売ラベル
@@ -1725,7 +1677,6 @@ button:active {
         display: grid;
     }
 
-
     /* ========================================
        ホーム画面・詳細画面を1列にする
     ======================================== */
@@ -1734,7 +1685,6 @@ button:active {
     #detail-screen {
         grid-template-columns: 1fr;
     }
-
 
     /* ========================================
        左側パネルのスマートフォン表示
@@ -1745,6 +1695,15 @@ button:active {
         height: auto;
         padding: 24px;
         overflow: visible;
+    }
+
+    /* ========================================
+       ホーム画面のメニューボタン
+    ======================================== */
+
+    .menu-buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     /* ========================================
@@ -1761,7 +1720,6 @@ button:active {
         max-height: 60vh;
     }
 
-
     /* ========================================
        吹き出しをキャラクターへ近づける
     ======================================== */
@@ -1769,7 +1727,6 @@ button:active {
     .speech-bubble {
         top: 160px;
     }
-
 
     /* ========================================
        新刊カードのスマートフォン表示
@@ -1784,7 +1741,6 @@ button:active {
         max-width: 260px;
         margin: 0 auto;
     }
-
 
     /* ========================================
        既刊カードのスマートフォン表示
@@ -1808,7 +1764,6 @@ button:active {
     .backlist-cover {
         max-height: 170px;
     }
-
 
     /* ========================================
        お品書き頒布物カードのスマートフォン表示
@@ -1846,7 +1801,6 @@ button:active {
         font-size: 16px;
         line-height: 1.7;
     }
-
 
     /* ========================================
        スマートフォンの完売ラベル
