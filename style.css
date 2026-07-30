@@ -1208,8 +1208,131 @@ button:active {
 
     line-height: 1.8;
 }
+/* ========================================
+   お品書きの頒布物一覧
+======================================== */
+
+.event-menu-items-section {
+    margin-top: 30px;
+}
+
+.event-menu-items-title {
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid #222222;
+
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.event-menu-items-list {
+    display: grid;
+    gap: 18px;
+}
 
 
+/* ========================================
+   お品書きの頒布物カード
+======================================== */
+
+.event-menu-item {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+
+    padding: 16px;
+
+    background-color: #ffffff;
+    border-left: 6px solid #4a90e2;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.event-menu-item-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: 210px;
+
+    object-fit: contain;
+
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.event-menu-item-info {
+    min-width: 0;
+}
+
+.event-menu-item-category {
+    display: inline-block;
+
+    margin: 0 0 8px;
+    padding: 4px 10px;
+
+    color: #ffffff;
+    background-color: #2478c5;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.event-menu-item-title {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #222222;
+
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.event-menu-item-details {
+    margin: 0 0 12px;
+}
+
+.event-menu-item-details div {
+    display: grid;
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 10px;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.event-menu-item-details dt {
+    color: #666666;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.event-menu-item-details dd {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.event-menu-item-description {
+    margin: 12px 0 0;
+    padding: 12px;
+
+    background-color: #fff8e8;
+    border-radius: 10px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
 /* ========================================
    お品書き画像
 ======================================== */
@@ -1262,7 +1385,29 @@ button:active {
 ======================================== */
 
 @media (max-width: 700px) {
-       /* ========================================
+      /* ========================================
+       お品書き頒布物カードのスマートフォン表示
+    ======================================== */
+
+    .event-menu-item {
+        grid-template-columns: 100px minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .event-menu-item-title {
+        font-size: 19px;
+    }
+
+    .event-menu-item-details div {
+        grid-template-columns: 70px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .event-menu-item-image {
+        max-height: 160px;
+    }
+    /* ========================================
        吹き出しをキャラクターへ近づける
     ======================================== */
 
