@@ -962,21 +962,20 @@ function createRecommendationHTML(recommendation) {
 ======================================== */
 
 function getEventMenuCategoryClass(category) {
-
     if (category === "新刊") {
-        return "badge-new";
+        return "event-category-new";
     }
 
     if (category === "既刊") {
-        return "badge-backlist";
+        return "event-category-backlist";
     }
 
     if (category === "グッズ") {
-        return "badge-goods";
+        return "event-category-goods";
     }
 
     if (category === "無料配布") {
-        return "badge-free";
+        return "event-category-free";
     }
 
     return "";
@@ -1183,7 +1182,7 @@ function createEventPriceListHTML(items) {
 
 
 /* ========================================
-   お品書きをカテゴリーごとに分ける
+   お品書きをカテゴリーごとに並べる
 ======================================== */
 
 function createEventMenuGroupsHTML(items) {
@@ -1210,20 +1209,8 @@ function createEventMenuGroupsHTML(items) {
                 })
                 .join("");
 
-            const categoryClass =
-                getEventMenuCategoryClass(category);
-
             return `
                 <section class="event-menu-group">
-
-                    <h4
-                        class="
-                            event-menu-group-title
-                            ${categoryClass}
-                        "
-                    >
-                        ${category}
-                    </h4>
 
                     <div class="event-menu-items-list">
                         ${itemCards}
