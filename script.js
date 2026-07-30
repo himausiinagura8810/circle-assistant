@@ -1118,6 +1118,29 @@ function createPriceStatusHTML(status) {
     `;
 }
 /* ========================================
+   価格早見表のカテゴリーを表示する
+======================================== */
+
+function createPriceCategoryHTML(category) {
+    if (!category) {
+        return "";
+    }
+
+    const categoryClass =
+        getEventMenuCategoryClass(category);
+
+    return `
+        <span
+            class="
+                event-price-category
+                ${categoryClass}
+            "
+        >
+            ${category}
+        </span>
+    `;
+}
+/* ========================================
    お品書きの価格早見表を作る
 ======================================== */
 function createEventPriceListHTML(items) {
@@ -1128,13 +1151,15 @@ function createEventPriceListHTML(items) {
 
                 <div class="event-price-name-area">
 
+                ${createPriceCategoryHTML(item.category)}
+
                 <span class="event-price-title">
-                  ${item.title}
+                   ${item.title}
                 </span>
 
-        ${createPriceStatusHTML(item.status)}
+                ${createPriceStatusHTML(item.status)}
 
-    </div>
+</div>
 
     <span class="event-price-value">
         ${item.price}
