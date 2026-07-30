@@ -1077,7 +1077,6 @@ function createEventMenuItemHTML(item) {
 /* ========================================
    お品書き用のバッジを作る
 ======================================== */
-
 function createEventMenuBadgeHTML(badges) {
     if (!badges || badges.length === 0) {
         return "";
@@ -1090,24 +1089,58 @@ function createEventMenuBadgeHTML(badges) {
     return createBadgeHTML(eventMenuBadges);
 }
 /* ========================================
-   お品書きの価格早見表を作る
+   価格早見表の在庫状況を表示する
 ======================================== */
 
+function createPriceStatusHTML(status) {
+    if (!status) {
+        return "";
+    }
+
+    let statusClass = "";
+
+    if (status === "在庫あり") {
+        statusClass = "price-status-available";
+    }
+
+    if (status === "残りわずか") {
+        statusClass = "price-status-low";
+    }
+
+    if (status === "完売") {
+        statusClass = "price-status-sold-out";
+    }
+
+    return `
+        <span class="event-price-status ${statusClass}">
+            ${status}
+        </span>
+    `;
+}
+/* ========================================
+   お品書きの価格早見表を作る
+======================================== */
 function createEventPriceListHTML(items) {
     const priceItems = items
         .map((item) => {
             return `
-                <div class="event-price-item">
+               <div class="event-price-item">
 
-                    <span class="event-price-title">
-                        ${item.title}
-                    </span>
+                <div class="event-price-name-area">
 
-                    <span class="event-price-value">
-                        ${item.price}
-                    </span>
+                <span class="event-price-title">
+                  ${item.title}
+                </span>
 
-                </div>
+        ${createPriceStatusHTML(item.status)}
+
+    </div>
+
+    <span class="event-price-value">
+        ${item.price}
+    </span>
+
+</div>
             `;
         })
         .join("");
