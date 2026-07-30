@@ -893,66 +893,67 @@ function createEventMenuItemHTML(item) {
     `;
 }
 /* ========================================
-   お品書きページ生成
+   お品書きの頒布物カードを作る
 ======================================== */
 
-function createEventMenuHTML() {
-    const eventMenuItems = getEventMenuItems();
-
-    const itemCards = eventMenuItems
-        .map((item) => {
-            return createEventMenuItemHTML(item);
-        })
-        .join("");
-
+function createEventMenuItemHTML(item) {
     return `
-        <section class="event-menu-card">
-
-            <p class="event-menu-label">
-                イベントモード
-            </p>
-
-            <h2 class="event-menu-title">
-                ${eventMenu.title}
-            </h2>
-
-            <p class="event-menu-introduction">
-                ${eventMenu.introduction}
-            </p>
+        <article class="event-menu-item">
 
             <button
-                class="event-menu-image-button"
+                class="backlist-cover-button"
                 type="button"
                 onclick="openBookCover(
-                    '${eventMenu.image}',
-                    '${eventMenu.title}'
+                    '${item.image}',
+                    '${item.title}'
                 )"
-                aria-label="お品書き画像を拡大表示"
+                aria-label="${item.title}の表紙を拡大表示"
             >
                 <img
-                    class="event-menu-image"
-                    src="${eventMenu.image}"
-                    alt="${eventMenu.imageAlt}"
+                    class="event-menu-item-image"
+                    src="${item.image}"
+                    alt="${item.title}の表紙"
                 >
             </button>
 
-            <p class="event-menu-help">
-                画像をタップすると拡大できます
-            </p>
+            <div class="event-menu-item-info">
 
-            <section class="event-menu-items-section">
+                <p class="event-menu-item-category">
+                    ${item.category}
+                </p>
 
-                <h3 class="event-menu-items-title">
-                    ${eventMenu.sectionTitle}
+                ${createBadgeHTML(item.badges)}
+
+                <h3 class="event-menu-item-title">
+                    ${item.title}
                 </h3>
 
-                <div class="event-menu-items-list">
-                    ${itemCards}
-                </div>
+                <dl class="event-menu-item-details">
+                    <div>
+                        <dt>価格</dt>
+                        <dd>${item.price}</dd>
+                    </div>
 
-            </section>
+                    <div>
+                        <dt>ページ数</dt>
+                        <dd>${item.pages}</dd>
+                    </div>
 
-        </section>
+                    <div>
+                        <dt>ジャンル</dt>
+                        <dd>${item.genre}</dd>
+                    </div>
+                </dl>
+
+                ${createSpecialHTML(item.special)}
+
+                <p class="event-menu-item-description">
+                    ${item.description}
+                </p>
+
+            </div>
+
+        </article>
     `;
 }
 
