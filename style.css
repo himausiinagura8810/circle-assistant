@@ -1381,6 +1381,42 @@ button:active {
     text-align: center;
 }
 /* ========================================
+   お品書きの在庫状況
+======================================== */
+
+.stock-status {
+    display: inline-block;
+
+    margin: 0 0 10px;
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.stock-available {
+    color: #155e3b;
+    background-color: #dff5e9;
+}
+
+.stock-low {
+    color: #7a4b00;
+    background-color: #fff0c7;
+}
+
+.stock-sold-out {
+    color: #ffffff;
+    background-color: #c63d3d;
+}
+
+.stock-coming-soon {
+    color: #7a4b00;
+    background-color: #ffe2bf;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 
