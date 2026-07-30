@@ -996,17 +996,20 @@ function getEventMenuItemClass(status) {
     return "";
 }
 /* ========================================
-   お品書きの頒布物カードを作る
+   お品書きカードへカテゴリー色を付ける
 ======================================== */
 
 function createEventMenuItemHTML(item) {
     const itemStatusClass =
         getEventMenuItemClass(item.status);
+
     const categoryClass =
         getEventMenuCategoryClass(item.category);
 
     return `
-        <article class="event-menu-item ${itemStatusClass}">
+        <article
+            class="event-menu-item ${itemStatusClass} ${categoryClass}"
+        >
 
             <button
                 class="backlist-cover-button"
