@@ -117,7 +117,7 @@ const newBook = {
     ],
 
     status: "在庫あり",
-
+    showInEventMenu: true,
     recommendation:
         "初めての方におすすめ",
 
@@ -147,7 +147,7 @@ const backlistBooks = [
     ],
        status: "残りわずか",
        recommendation: "ギャグ好きにおすすめ",
-
+       showInEventMenu: true,
        special: [
            "描き下ろしペーパー",
            "イベント限定ポストカード"
@@ -168,6 +168,7 @@ const backlistBooks = [
             "準備中"
         ],
         status: "完売",
+        showInEventMenu: false,
         recommendation: "こちらは準備中です",
         description:
             "こちらは準備中です。"
@@ -184,6 +185,7 @@ const backlistBooks = [
             "準備中"
         ],
         status: "準備中",
+        showInEventMenu: false,
         recommendation: "こちらは準備中です",
         description:
             "こちらは準備中です。"
@@ -838,7 +840,7 @@ function renderCircleInfo() {
 ======================================== */
 
 function getEventMenuItems() {
-    return [
+    const eventMenuItems = [
         {
             ...newBook,
             category: "新刊"
@@ -851,6 +853,10 @@ function getEventMenuItems() {
             };
         })
     ];
+
+    return eventMenuItems.filter((item) => {
+        return item.showInEventMenu !== false;
+    });
 }
 /* ========================================
    在庫状況を表示する
