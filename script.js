@@ -116,7 +116,7 @@ const newBook = {
         "全年齢"
     ],
 
-    status: "完売",
+    status: "在庫あり",
     showInEventMenu: true,
     recommendation:
         "初めての方におすすめ",
