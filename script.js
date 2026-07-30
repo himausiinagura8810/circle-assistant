@@ -99,6 +99,35 @@ const socialLinks = [
     }
 ];
 
+/* ========================================
+   新刊データ
+======================================== */
+
+const newBook = {
+    title: "作品タイトル",
+    price: "未定",
+    pages: "未定",
+    genre: "未定",
+    release: "イベント当日",
+    image: "picture/newbook-cover.png",
+
+    badges: [
+        "新刊",
+        "全年齢"
+    ],
+
+    status: "在庫あり",
+
+    recommendation:
+        "初めての方におすすめ",
+
+    special: [
+        "描き下ろしペーパー"
+    ],
+
+    description:
+        "ここに新刊のあらすじや、おすすめポイントを掲載します。"
+};
 
 /* ========================================
    既刊データ
@@ -116,8 +145,8 @@ const backlistBooks = [
            "既刊",
            "全年齢"
     ],
-
        status: "残りわずか",
+       recommendation: "ギャグ好きにおすすめ",
 
        special: [
            "描き下ろしペーパー",
@@ -139,6 +168,7 @@ const backlistBooks = [
             "準備中"
         ],
         status: "完売",
+        recommendation: "こちらは準備中です",
         description:
             "こちらは準備中です。"
     },
@@ -154,39 +184,11 @@ const backlistBooks = [
             "準備中"
         ],
         status: "準備中",
+        recommendation: "こちらは準備中です",
         description:
             "こちらは準備中です。"
     }
 ];
-
-
-/* ========================================
-   新刊データ
-======================================== */
-
-const newBook = {
-    title: "作品タイトル",
-    price: "未定",
-    pages: "未定",
-    genre: "未定",
-    release: "イベント当日",
-    image: "picture/newbook-cover.png",
-
-    badges: [
-        "新刊",
-        "全年齢"
-    ],
-
-    status: "在庫あり",
-
-    special: [
-        "描き下ろしペーパー"
-    ],
-
-    description:
-        "ここに新刊のあらすじや、おすすめポイントを掲載します。"
-};
-
 
 /* ========================================
    画面データ
@@ -884,6 +886,21 @@ function createStockStatusHTML(status) {
     `;
 }
 /* ========================================
+   おすすめ情報を表示する
+======================================== */
+
+function createRecommendationHTML(recommendation) {
+    if (!recommendation) {
+        return "";
+    }
+
+    return `
+        <p class="event-recommendation">
+            ${recommendation}
+        </p>
+    `;
+}
+/* ========================================
    お品書きの頒布物カードを作る
 ======================================== */
 
@@ -912,6 +929,7 @@ function createEventMenuItemHTML(item) {
 
                 ${createEventMenuBadgeHTML(item.badges)}
                 ${createStockStatusHTML(item.status)}
+                ${createRecommendationHTML(item.recommendation)}
                 <h3 class="event-menu-item-title">
                     ${item.title}
                 </h3>
