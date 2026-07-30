@@ -1592,6 +1592,40 @@ button:active {
     white-space: nowrap;
 }
 /* ========================================
+   価格早見表のカテゴリー
+======================================== */
+
+.event-price-category {
+    display: inline-block;
+
+    padding: 3px 8px;
+
+    color: #ffffff;
+    background-color: #2478c5;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.event-price-category.event-category-new {
+    background-color: #2478c5;
+}
+
+.event-price-category.event-category-backlist {
+    background-color: #68737d;
+}
+
+.event-price-category.event-category-goods {
+    background-color: #8e5bb7;
+}
+
+.event-price-category.event-category-free {
+    background-color: #2f8f5b;
+}
+/* ========================================
    価格早見表の在庫状況
 ======================================== */
 
