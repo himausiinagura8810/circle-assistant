@@ -1538,6 +1538,60 @@ button:active {
     border-left-color: #2f8f5b;
 }
 /* ========================================
+   お品書きの価格早見表
+======================================== */
+
+.event-price-list {
+    margin-top: 26px;
+    padding: 18px;
+
+    background-color: #eef6ff;
+    border-left: 6px solid #4a90e2;
+    border-radius: 12px;
+}
+
+.event-price-list-title {
+    margin: 0 0 14px;
+
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.event-price-list-items {
+    display: grid;
+    gap: 8px;
+}
+
+.event-price-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #cbdced;
+}
+
+.event-price-item:last-child {
+    border-bottom: none;
+}
+
+.event-price-title {
+    min-width: 0;
+
+    font-weight: bold;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.event-price-value {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 @media (max-width: 700px) {
