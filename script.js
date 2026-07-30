@@ -191,7 +191,56 @@ const backlistBooks = [
             "こちらは準備中です。"
     }
 ];
+/* ========================================
+   グッズ・無料配布物データ
+======================================== */
 
+const eventExtras = [
+    {
+        title: "イベント限定ポストカード",
+        price: "100円",
+        pages: "―",
+        genre: "グッズ",
+        image: "picture/postcard.png",
+
+        category: "グッズ",
+
+        badges: [
+            "イベント限定"
+        ],
+
+        status: "在庫あり",
+
+        showInEventMenu: true,
+
+        recommendation:
+            "本と一緒にどうぞ",
+
+        description:
+            "イベント限定で頒布するオリジナルポストカードです。"
+    },
+
+    {
+        title: "無料配布ペーパー",
+        price: "無料",
+        pages: "1枚",
+        genre: "ペーパー",
+        image: "picture/free-paper.png",
+
+        category: "無料配布",
+
+        badges: [
+            "無料配布"
+        ],
+
+        status: "在庫あり",
+
+        showInEventMenu: true,
+
+        description:
+            "作品紹介や描き下ろしイラストを掲載した無料ペーパーです。"
+    }
+];
 /* ========================================
    画面データ
 ======================================== */
@@ -851,7 +900,9 @@ function getEventMenuItems() {
                 ...book,
                 category: "既刊"
             };
-        })
+        }),
+
+        ...eventExtras
     ];
 
     return eventMenuItems.filter((item) => {
@@ -907,6 +958,29 @@ function createRecommendationHTML(recommendation) {
     `;
 }
 /* ========================================
+   お品書きカテゴリーのクラスを作る
+======================================== */
+
+function getEventMenuCategoryClass(category) {
+    if (category === "新刊") {
+        return "event-category-new";
+    }
+
+    if (category === "既刊") {
+        return "event-category-backlist";
+    }
+
+    if (category === "グッズ") {
+        return "event-category-goods";
+    }
+
+    if (category === "無料配布") {
+        return "event-category-free";
+    }
+
+    return "";
+}
+/* ========================================
    お品書きカードの状態クラスを作る
 ======================================== */
 
@@ -928,6 +1002,8 @@ function getEventMenuItemClass(status) {
 function createEventMenuItemHTML(item) {
     const itemStatusClass =
         getEventMenuItemClass(item.status);
+    const categoryClass =
+        getEventMenuCategoryClass(item.category);
 
     return `
         <article class="event-menu-item ${itemStatusClass}">
@@ -954,8 +1030,8 @@ function createEventMenuItemHTML(item) {
             }
             <div class="event-menu-item-info">
 
-                <p class="event-menu-item-category">
-                    ${item.category}
+                <p class="event-menu-item-category ${categoryClass}">
+                ${item.category}
                 </p>
 
                 ${createEventMenuBadgeHTML(item.badges)}
