@@ -1130,7 +1130,12 @@ function createPriceCategoryHTML(category) {
         getEventMenuCategoryClass(category);
 
     return `
-        <span class="book-badge ${categoryClass}">
+        <span
+            class="
+                event-price-category
+                ${categoryClass}
+            "
+        >
             ${category}
         </span>
     `;
