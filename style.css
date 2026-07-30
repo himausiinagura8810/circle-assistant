@@ -1491,6 +1491,25 @@ button:active {
     z-index: 2;
 }
 /* ========================================
+   お品書きカテゴリーの色分け
+======================================== */
+
+.event-category-new {
+    background-color: #2478c5;
+}
+
+.event-category-backlist {
+    background-color: #68737d;
+}
+
+.event-category-goods {
+    background-color: #8e5bb7;
+}
+
+.event-category-free {
+    background-color: #2f8f5b;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 @media (max-width: 700px) {
