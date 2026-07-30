@@ -1446,12 +1446,19 @@ button:active {
     position: relative;
 }
 
+/* カテゴリー色 */
+.event-menu-item.event-category-goods {
+    border-left-color: #8e5bb7;
+}
+
+/* 在庫状態はカテゴリー色より後に置く */
 .event-menu-item-low-stock {
     border-left-color: #d47a16;
 }
 
 .event-menu-item-sold-out {
     border-left-color: #c63d3d;
+}
     background-color: #f3f3f3;
 }
 
@@ -1491,23 +1498,44 @@ button:active {
     z-index: 2;
 }
 /* ========================================
-   お品書きカテゴリーの色分け
+   お品書きカテゴリーのバッジ色
 ======================================== */
 
-.event-category-new {
+.event-menu-item-category.event-category-new {
     background-color: #2478c5;
 }
 
-.event-category-backlist {
+.event-menu-item-category.event-category-backlist {
     background-color: #68737d;
 }
 
-.event-category-goods {
+.event-menu-item-category.event-category-goods {
     background-color: #8e5bb7;
 }
 
-.event-category-free {
+.event-menu-item-category.event-category-free {
     background-color: #2f8f5b;
+}
+
+
+/* ========================================
+   お品書きカード左線のカテゴリー色
+======================================== */
+
+.event-menu-item.event-category-new {
+    border-left-color: #2478c5;
+}
+
+.event-menu-item.event-category-backlist {
+    border-left-color: #68737d;
+}
+
+.event-menu-item.event-category-goods {
+    border-left-color: #8e5bb7;
+}
+
+.event-menu-item.event-category-free {
+    border-left-color: #2f8f5b;
 }
 /* ========================================
    画面幅が狭い場合
