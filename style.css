@@ -834,6 +834,13 @@ button:active {
 .badge-r18 {
     background-color: #c63d3d;
 }
+.badge-goods {
+    background: #8e5bb7;
+}
+
+.badge-free {
+    background: #2f8f5b;
+}
 /* ========================================
    SNSリンク
 ======================================== */
