@@ -1592,6 +1592,46 @@ button:active {
     white-space: nowrap;
 }
 /* ========================================
+   価格早見表の在庫状況
+======================================== */
+
+.event-price-name-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.event-price-status {
+    display: inline-block;
+
+    padding: 3px 8px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.price-status-available {
+    color: #155e3b;
+    background-color: #dff5e9;
+}
+
+.price-status-low {
+    color: #7a4b00;
+    background-color: #fff0c7;
+}
+
+.price-status-sold-out {
+    color: #ffffff;
+    background-color: #c63d3d;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 @media (max-width: 700px) {
