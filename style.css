@@ -120,7 +120,20 @@ body {
 .menu-button-event:active {
     transform: scale(0.98);
 }
+.menu-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
 
+.menu-button-event {
+    grid-column: 1 / -1;
+    min-height: 86px;
+
+    background-color: #2478c5;
+
+    font-size: 26px;
+}
 button {
     min-height: 74px;
 
@@ -142,7 +155,6 @@ button {
 button:active {
     transform: scale(0.97);
 }
-
 
 /* ========================================
    戻るボタン
@@ -1734,30 +1746,6 @@ button:active {
         padding: 24px;
         overflow: visible;
     }
-
-
-    /* ========================================
-       ホーム画面のメニューボタン
-    ======================================== */
-
-    .menu-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-
-        width: 100%;
-    }
-
-    .menu-buttons > button {
-        width: 100%;
-        min-width: 0;
-        margin: 0;
-    }
-
-    .menu-buttons > .menu-button-event {
-        grid-column: 1 / -1;
-    }
-
 
     /* ========================================
        キャラクター表示
