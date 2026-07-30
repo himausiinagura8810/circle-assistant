@@ -1439,6 +1439,58 @@ button:active {
     line-height: 1.4;
 }
 /* ========================================
+   お品書きカードの在庫状態
+======================================== */
+
+.event-menu-item {
+    position: relative;
+}
+
+.event-menu-item-low-stock {
+    border-left-color: #d47a16;
+}
+
+.event-menu-item-sold-out {
+    border-left-color: #c63d3d;
+    background-color: #f3f3f3;
+}
+
+.event-menu-item-sold-out .event-menu-item-image {
+    opacity: 0.45;
+    filter: grayscale(100%);
+}
+
+.event-menu-item-sold-out .event-menu-item-info {
+    opacity: 0.72;
+}
+
+
+/* ========================================
+   完売ラベル
+======================================== */
+
+.event-menu-sold-out-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    margin: 0;
+    padding: 7px 14px;
+
+    color: #ffffff;
+    background-color: #c63d3d;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+
+    transform: rotate(-8deg);
+
+    z-index: 2;
+}
+/* ========================================
    画面幅が狭い場合
 ======================================== */
 @media (max-width: 700px) {
