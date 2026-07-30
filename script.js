@@ -117,7 +117,7 @@ const backlistBooks = [
            "全年齢"
     ],
 
-       status: "在庫あり",
+       status: "残り僅か",
 
        special: [
            "描き下ろしペーパー",
@@ -138,7 +138,7 @@ const backlistBooks = [
         badges: [
             "準備中"
         ],
-        status: "準備中",
+        status: "完売",
         description:
             "こちらは準備中です。"
     },
