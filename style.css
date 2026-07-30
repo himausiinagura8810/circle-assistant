@@ -1616,6 +1616,10 @@ button:active {
     white-space: nowrap;
 }
 
+/* ========================================
+   価格早見表のカテゴリー色
+======================================== */
+
 .event-price-category.event-category-new {
     background-color: #2478c5;
 }
