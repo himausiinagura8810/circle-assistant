@@ -897,6 +897,14 @@ function createEventMenuItemHTML(item) {
 ======================================== */
 
 function createEventMenuHTML() {
+    const eventMenuItems = getEventMenuItems();
+
+    const itemCards = eventMenuItems
+        .map((item) => {
+            return createEventMenuItemHTML(item);
+        })
+        .join("");
+
     return `
         <section class="event-menu-card">
 
@@ -932,10 +940,21 @@ function createEventMenuHTML() {
                 画像をタップすると拡大できます
             </p>
 
+            <section class="event-menu-items-section">
+
+                <h3 class="event-menu-items-title">
+                    ${eventMenu.sectionTitle}
+                </h3>
+
+                <div class="event-menu-items-list">
+                    ${itemCards}
+                </div>
+
+            </section>
+
         </section>
     `;
 }
-
 
 /* ========================================
    初期表示
