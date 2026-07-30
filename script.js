@@ -842,56 +842,8 @@ function getEventMenuItems() {
         })
     ];
 }
-/* ========================================
-   お品書きの頒布物カードを作る
-======================================== */
 
-function createEventMenuItemHTML(item) {
-    return `
-        <article class="event-menu-item">
 
-            <img
-                class="event-menu-item-image"
-                src="${item.image}"
-                alt="${item.title}の表紙"
-            >
-
-            <div class="event-menu-item-info">
-
-                <p class="event-menu-item-category">
-                    ${item.category}
-                </p>
-
-                <h3 class="event-menu-item-title">
-                    ${item.title}
-                </h3>
-
-                <dl class="event-menu-item-details">
-                    <div>
-                        <dt>価格</dt>
-                        <dd>${item.price}</dd>
-                    </div>
-
-                    <div>
-                        <dt>ページ数</dt>
-                        <dd>${item.pages}</dd>
-                    </div>
-
-                    <div>
-                        <dt>ジャンル</dt>
-                        <dd>${item.genre}</dd>
-                    </div>
-                </dl>
-
-                <p class="event-menu-item-description">
-                    ${item.description}
-                </p>
-
-            </div>
-
-        </article>
-    `;
-}
 /* ========================================
    お品書きの頒布物カードを作る
 ======================================== */
@@ -903,10 +855,7 @@ function createEventMenuItemHTML(item) {
             <button
                 class="backlist-cover-button"
                 type="button"
-                onclick="openBookCover(
-                    '${item.image}',
-                    '${item.title}'
-                )"
+                onclick="openBookCover('${item.image}', '${item.title}')"
                 aria-label="${item.title}の表紙を拡大表示"
             >
                 <img
@@ -929,6 +878,7 @@ function createEventMenuItemHTML(item) {
                 </h3>
 
                 <dl class="event-menu-item-details">
+
                     <div>
                         <dt>価格</dt>
                         <dd>${item.price}</dd>
@@ -943,6 +893,7 @@ function createEventMenuItemHTML(item) {
                         <dt>ジャンル</dt>
                         <dd>${item.genre}</dd>
                     </div>
+
                 </dl>
 
                 ${createSpecialHTML(item.special)}
@@ -954,6 +905,68 @@ function createEventMenuItemHTML(item) {
             </div>
 
         </article>
+    `;
+}
+
+
+/* ========================================
+   お品書きページ生成
+======================================== */
+
+function createEventMenuHTML() {
+    const eventMenuItems = getEventMenuItems();
+
+    const itemCards = eventMenuItems
+        .map((item) => {
+            return createEventMenuItemHTML(item);
+        })
+        .join("");
+
+    return `
+        <section class="event-menu-card">
+
+            <p class="event-menu-label">
+                イベントモード
+            </p>
+
+            <h2 class="event-menu-title">
+                ${eventMenu.title}
+            </h2>
+
+            <p class="event-menu-introduction">
+                ${eventMenu.introduction}
+            </p>
+
+            <button
+                class="event-menu-image-button"
+                type="button"
+                onclick="openBookCover('${eventMenu.image}', '${eventMenu.title}')"
+                aria-label="お品書き画像を拡大表示"
+            >
+                <img
+                    class="event-menu-image"
+                    src="${eventMenu.image}"
+                    alt="${eventMenu.imageAlt}"
+                >
+            </button>
+
+            <p class="event-menu-help">
+                画像をタップすると拡大できます
+            </p>
+
+            <section class="event-menu-items-section">
+
+                <h3 class="event-menu-items-title">
+                    ${eventMenu.sectionTitle}
+                </h3>
+
+                <div class="event-menu-items-list">
+                    ${itemCards}
+                </div>
+
+            </section>
+
+        </section>
     `;
 }
 
