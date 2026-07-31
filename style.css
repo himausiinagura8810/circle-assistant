@@ -1542,13 +1542,27 @@ button:active {
 
 .event-price-item {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 14px;
     align-items: center;
 
-    padding: 8px 0;
+    padding: 10px 4px;
+
+    color: #111111;
+    text-decoration: none;
 
     border-bottom: 1px solid #cbdced;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.event-price-item:hover,
+.event-price-item:focus-visible {
+    background-color: #dfefff;
+    transform: translateX(3px);
+    outline: none;
 }
 
 .event-price-item:last-child {
@@ -1646,6 +1660,78 @@ button:active {
 .price-status-sold-out {
     color: #ffffff;
     background-color: #c63d3d;
+}
+/* ========================================
+   価格早見表の操作案内
+======================================== */
+
+.event-price-list-help {
+    margin: -4px 0 12px;
+
+    color: #555555;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   価格早見表の移動アイコン
+======================================== */
+
+.event-price-jump {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    color: #ffffff;
+    background-color: #2478c5;
+    border-radius: 50%;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* ========================================
+   移動先カードの強調表示
+======================================== */
+
+.event-menu-item-highlight {
+    animation: event-item-highlight 1.2s ease-out;
+}
+
+@keyframes event-item-highlight {
+    0% {
+        box-shadow:
+            0 0 0 5px rgb(36 120 197 / 35%),
+            0 4px 14px rgb(0 0 0 / 8%);
+    }
+
+    100% {
+        box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+    }
+}
+
+/* ========================================
+   お品書きのページ上部へ戻るボタン
+======================================== */
+
+.event-menu-top-button {
+    display: block;
+
+    width: 100%;
+    min-height: auto;
+
+    margin-top: 28px;
+    padding: 14px 18px;
+
+    background-color: #2478c5;
+    border-radius: 999px;
+
+    font-size: 17px;
 }
 
 /* ========================================
