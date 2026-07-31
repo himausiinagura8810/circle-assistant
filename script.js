@@ -1226,14 +1226,56 @@ function createEventMenuGroupsHTML(items) {
         })
         .join("");
 }
+/* ========================================
+   お品書き用のイベント案内を作る
+======================================== */
 
+function createEventInformationHTML() {
+    return `
+        <section class="event-information">
 
+            <h3 class="event-information-title">
+                参加イベント情報
+            </h3>
+
+            <dl class="event-information-details">
+
+                <div>
+                    <dt>イベント</dt>
+                    <dd>${circleInfo.event}</dd>
+                </div>
+
+                <div>
+                    <dt>開催日</dt>
+                    <dd>${circleInfo.date}</dd>
+                </div>
+
+                <div>
+                    <dt>会場</dt>
+                    <dd>${circleInfo.venue}</dd>
+                </div>
+
+                <div>
+                    <dt>スペース</dt>
+                    <dd class="event-information-space">
+                        ${circleInfo.space}
+                    </dd>
+                </div>
+
+            </dl>
+
+        </section>
+    `;
+}
 /* ========================================
    お品書きページ生成
 ======================================== */
 
 function createEventMenuHTML() {
     const eventMenuItems = getEventMenuItems();
+
+    const eventInformation =
+    createEventInformationHTML();
 
     const eventPriceList =
         createEventPriceListHTML(eventMenuItems);
@@ -1255,6 +1297,8 @@ function createEventMenuHTML() {
             <p class="event-menu-introduction">
                 ${eventMenu.introduction}
             </p>
+
+            ${eventInformation}
 
             <button
                 class="event-menu-image-button"
