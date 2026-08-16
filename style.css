@@ -356,6 +356,45 @@ button:active {
 }
 
 /* ========================================
+   作品サンプル画像
+======================================== */
+
+.book-samples {
+    margin-top: 20px;
+}
+
+.book-samples h3 {
+    margin: 0 0 12px;
+}
+
+.sample-image-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.sample-image-button {
+    min-height: auto;
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sample-image {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+/* ========================================
    キャラクターの吹き出し
 ======================================== */
 
