@@ -442,10 +442,7 @@ function createSampleImagesHTML(samples, title) {
                 <button
                     class="sample-image-button"
                     type="button"
-                    onclick="openBookCover(
-                        '${sample}',
-                        '${title} サンプル${index + 1}'
-                    )"
+                    onclick="openBookCover('${sample}', '${title} サンプル${index + 1}')"
                     aria-label="${title}のサンプル${index + 1}を拡大表示"
                 >
                     <img
@@ -460,15 +457,11 @@ function createSampleImagesHTML(samples, title) {
 
     return `
         <section class="book-samples">
-
-            <h3>
-                サンプルを見る
-            </h3>
+            <h3>サンプルを見る</h3>
 
             <div class="sample-image-list">
                 ${sampleItems}
             </div>
-
         </section>
     `;
 }
