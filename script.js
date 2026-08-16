@@ -407,6 +407,70 @@ function openBookCover(image, title) {
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
+ /* ========================================
+   新刊サンプル画像
+======================================== */
+
+samples: [
+    "picture/newbook-sample1.png",
+    "picture/newbook-sample2.png",
+    "picture/newbook-sample3.png"
+],
+/* ========================================
+   既刊サンプル画像
+======================================== */
+
+samples: [
+    "picture/backbook1-sample1.png",
+    "picture/backbook1-sample2.png",
+    "picture/backbook1-sample3.png"
+],
+}
+
+/* ========================================
+   サンプル画像一覧を作る
+======================================== */
+
+function createSampleImagesHTML(samples, title) {
+    if (!samples || samples.length === 0) {
+        return "";
+    }
+
+    const sampleItems = samples
+        .map((sample, index) => {
+            return `
+                <button
+                    class="sample-image-button"
+                    type="button"
+                    onclick="openBookCover(
+                        '${sample}',
+                        '${title} サンプル${index + 1}'
+                    )"
+                    aria-label="${title}のサンプル${index + 1}を拡大表示"
+                >
+                    <img
+                        class="sample-image"
+                        src="${sample}"
+                        alt="${title}のサンプル${index + 1}"
+                    >
+                </button>
+            `;
+        })
+        .join("");
+
+    return `
+        <section class="book-samples">
+
+            <h3>
+                サンプルを見る
+            </h3>
+
+            <div class="sample-image-list">
+                ${sampleItems}
+            </div>
+
+        </section>
+    `;
 }
 
 /* ========================================
@@ -569,6 +633,10 @@ function createNewBookHTML() {
                     <h3>作品紹介</h3>
                     <p>${newBook.description}</p>
                 </section>
+                ${createSampleImagesHTML(
+                newBook.samples,
+                newBook.title
+                     )}
             </div>
         </article>
     `;
@@ -598,6 +666,7 @@ function createBacklistHTML() {
 
                     <div class="backlist-info">
                         ${createBadgeHTML(book.badges)}
+
                         <h2>${book.title}</h2>
 
                         <dl>
@@ -605,10 +674,12 @@ function createBacklistHTML() {
                                 <dt>価格</dt>
                                 <dd>${book.price}</dd>
                             </div>
+
                             <div>
                                 <dt>ページ数</dt>
                                 <dd>${book.pages}</dd>
                             </div>
+
                             <div>
                                 <dt>ジャンル</dt>
                                 <dd>${book.genre}</dd>
@@ -616,7 +687,15 @@ function createBacklistHTML() {
                         </dl>
 
                         ${createSpecialHTML(book.special)}
-                        <p>${book.description}</p>
+
+                        <p>
+                            ${book.description}
+                        </p>
+
+                        ${createSampleImagesHTML(
+                            book.samples,
+                            book.title
+                        )}
                     </div>
                 </article>
             `;
