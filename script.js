@@ -103,6 +103,12 @@ const newBook = {
     release: "イベント当日",
     image: "picture/newbook-cover.png",
 
+    samples: [
+        "picture/newbook-sample1.png",
+        "picture/newbook-sample2.png",
+        "picture/newbook-sample3.png"
+    ],
+
     badges: [
         "新刊",
         "全年齢"
@@ -131,6 +137,12 @@ const backlistBooks = [
         pages: "32P",
         genre: "ギャグ",
         image: "picture/backbook1.png",
+
+        samples: [
+            "picture/backbook1-sample1.png",
+            "picture/backbook1-sample2.png",
+            "picture/backbook1-sample3.png"
+        ],
 
         badges: [
             "既刊",
@@ -407,24 +419,6 @@ function openBookCover(image, title) {
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
- /* ========================================
-   新刊サンプル画像
-======================================== */
-
-samples: [
-    "picture/newbook-sample1.png",
-    "picture/newbook-sample2.png",
-    "picture/newbook-sample3.png"
-],
-/* ========================================
-   既刊サンプル画像
-======================================== */
-
-samples: [
-    "picture/backbook1-sample1.png",
-    "picture/backbook1-sample2.png",
-    "picture/backbook1-sample3.png"
-],
 }
 
 /* ========================================
