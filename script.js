@@ -393,71 +393,408 @@ function scrollToEventItem(itemId) {
 }
 
 /* ========================================
-   新刊表紙の拡大表示
+   ギャラリー表示用データ
+======================================== */
+
+let galleryImages = [];
+let galleryTitle = "";
+let galleryIndex = 0;
+let galleryTouchStartX = 0;
+
+/* ========================================
+   新刊の表紙・サンプルを開く
 ======================================== */
 
 function openCover() {
-    openBookCover(
-        newBook.image,
-        newBook.title
-    );
+    openBookGallery(newBook);
 }
 
 /* ========================================
-   指定した画像を拡大表示
+   本の表紙・サンプルをギャラリー表示
+======================================== */
+
+function openBookGallery(book) {
+    const samples = Array.isArray(book.samples)
+        ? book.samples
+        : [];
+
+    const images = [
+        book.image,
+        ...samples
+    ].filter(Boolean);
+
+    openImageGallery(images, book.title);
+}
+
+/* ========================================
+   お品書きの本をギャラリー表示
+======================================== */
+
+function openEventBookGallery(itemId) {
+    const item = getEventMenuItems()
+        .find((eventItem) => {
+            return eventItem.eventItemId === itemId;
+        });
+
+    if (!item) {
+        return;
+    }
+
+    openBookGallery(item);
+}
+
+/* ========================================
+   1枚だけの画像を拡大表示
 ======================================== */
 
 function openBookCover(image, title) {
+    openImageGallery([image], title);
+}
+
+/* ========================================
+   画像ギャラリーを開く
+======================================== */
+
+function openImageGallery(images, title) {
+    const validImages = images.filter(Boolean);
+
+    if (validImages.length === 0) {
+        return;
+    }
+
+    galleryImages = validImages;
+    galleryTitle = title;
+    galleryIndex = 0;
+
+    ensureGalleryUI();
+    updateGalleryImage();
+
     const modal =
         document.getElementById("cover-modal");
-
-    const modalImage =
-        document.querySelector(".cover-modal-image");
-
-    modalImage.src = image;
-    modalImage.alt = `${title}の拡大画像`;
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
 }
 
 /* ========================================
-   サンプル画像一覧を作る
+   ギャラリー用UIを準備
 ======================================== */
 
-function createSampleImagesHTML(samples, title) {
-    if (!samples || samples.length === 0) {
-        return "";
+function ensureGalleryUI() {
+    const modal =
+        document.getElementById("cover-modal");
+
+    const modalImage =
+        document.querySelector(".cover-modal-image");
+
+    if (!modal || !modalImage) {
+        return;
     }
 
-    const sampleItems = samples
-        .map((sample, index) => {
-            return `
-                <button
-                    class="sample-image-button"
-                    type="button"
-                    onclick="openBookCover('${sample}', '${title} サンプル${index + 1}')"
-                    aria-label="${title}のサンプル${index + 1}を拡大表示"
+    if (!document.getElementById("gallery-controls")) {
+        const controls = document.createElement("div");
+        controls.id = "gallery-controls";
+        controls.className = "gallery-controls";
+
+        controls.innerHTML = `
+            <button
+                class="gallery-nav-button gallery-prev-button"
+                type="button"
+                onclick="changeGalleryImage(-1)"
+                aria-label="前の画像を見る"
+            >
+                ‹
+            </button>
+
+            <div class="gallery-bottom-area">
+                <p
+                    id="gallery-counter"
+                    class="gallery-counter"
+                    aria-live="polite"
+                ></p>
+
+                <p
+                    id="gallery-help"
+                    class="gallery-help"
                 >
-                    <img
-                        class="sample-image"
-                        src="${sample}"
-                        alt="${title}のサンプル${index + 1}"
-                    >
-                </button>
-            `;
-        })
-        .join("");
-
-    return `
-        <section class="book-samples">
-            <h3>サンプルを見る</h3>
-
-            <div class="sample-image-list">
-                ${sampleItems}
+                    左右にスワイプできます
+                </p>
             </div>
-        </section>
-    `;
+
+            <button
+                class="gallery-nav-button gallery-next-button"
+                type="button"
+                onclick="changeGalleryImage(1)"
+                aria-label="次の画像を見る"
+            >
+                ›
+            </button>
+        `;
+
+        modal.appendChild(controls);
+    }
+
+    if (!document.getElementById("gallery-script-style")) {
+        const style = document.createElement("style");
+        style.id = "gallery-script-style";
+
+        style.textContent = `
+            #cover-modal {
+                touch-action: pan-y;
+            }
+
+            #cover-modal .cover-modal-image {
+                user-select: none;
+                -webkit-user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            .gallery-controls {
+                position: absolute;
+                inset: 0;
+
+                pointer-events: none;
+            }
+
+            .gallery-nav-button {
+                position: absolute;
+                top: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 48px !important;
+                height: 48px !important;
+                min-height: 48px !important;
+
+                margin: 0 !important;
+                padding: 0 !important;
+
+                color: #ffffff !important;
+                background: rgb(0 0 0 / 55%) !important;
+
+                border: 2px solid rgb(255 255 255 / 75%) !important;
+                border-radius: 50% !important;
+
+                font-size: 36px !important;
+                font-weight: normal !important;
+                line-height: 1 !important;
+
+                transform: translateY(-50%);
+
+                pointer-events: auto;
+                z-index: 5;
+            }
+
+            .gallery-prev-button {
+                left: 16px;
+            }
+
+            .gallery-next-button {
+                right: 16px;
+            }
+
+            .gallery-bottom-area {
+                position: absolute;
+                left: 50%;
+                bottom: 18px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+
+                padding: 8px 14px;
+
+                color: #ffffff;
+                background: rgb(0 0 0 / 60%);
+                border-radius: 999px;
+
+                transform: translateX(-50%);
+
+                pointer-events: none;
+                z-index: 5;
+            }
+
+            .gallery-counter,
+            .gallery-help {
+                margin: 0;
+
+                color: #ffffff;
+                text-align: center;
+            }
+
+            .gallery-counter {
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .gallery-help {
+                font-size: 12px;
+            }
+
+            .gallery-controls.is-single .gallery-nav-button,
+            .gallery-controls.is-single .gallery-help {
+                display: none !important;
+            }
+
+            .gallery-controls.is-single .gallery-bottom-area {
+                display: none;
+            }
+
+            @media (max-width: 700px) {
+                .gallery-nav-button {
+                    width: 42px !important;
+                    height: 42px !important;
+                    min-height: 42px !important;
+
+                    font-size: 32px !important;
+                }
+
+                .gallery-prev-button {
+                    left: 8px;
+                }
+
+                .gallery-next-button {
+                    right: 8px;
+                }
+
+                .gallery-bottom-area {
+                    bottom: 12px;
+
+                    padding: 7px 12px;
+                }
+            }
+        `;
+
+        document.head.appendChild(style);
+    }
+
+    if (!modalImage.dataset.gallerySwipeReady) {
+        modalImage.addEventListener(
+            "touchstart",
+            handleGalleryTouchStart,
+            { passive: true }
+        );
+
+        modalImage.addEventListener(
+            "touchend",
+            handleGalleryTouchEnd,
+            { passive: true }
+        );
+
+        modalImage.dataset.gallerySwipeReady = "true";
+    }
+}
+
+/* ========================================
+   ギャラリー画像を更新
+======================================== */
+
+function updateGalleryImage() {
+    const modalImage =
+        document.querySelector(".cover-modal-image");
+
+    const counter =
+        document.getElementById("gallery-counter");
+
+    const controls =
+        document.getElementById("gallery-controls");
+
+    if (!modalImage || galleryImages.length === 0) {
+        return;
+    }
+
+    modalImage.src = galleryImages[galleryIndex];
+
+    if (galleryIndex === 0 && galleryImages.length > 1) {
+        modalImage.alt = `${galleryTitle}の表紙`;
+    } else if (galleryImages.length > 1) {
+        modalImage.alt =
+            `${galleryTitle}のサンプル${galleryIndex}`;
+    } else {
+        modalImage.alt = `${galleryTitle}の拡大画像`;
+    }
+
+    if (counter) {
+        counter.textContent =
+            `${galleryIndex + 1} / ${galleryImages.length}`;
+    }
+
+    if (controls) {
+        controls.classList.toggle(
+            "is-single",
+            galleryImages.length <= 1
+        );
+    }
+}
+
+/* ========================================
+   前後の画像へ移動
+======================================== */
+
+function changeGalleryImage(direction) {
+    if (galleryImages.length <= 1) {
+        return;
+    }
+
+    galleryIndex += direction;
+
+    if (galleryIndex < 0) {
+        galleryIndex = galleryImages.length - 1;
+    }
+
+    if (galleryIndex >= galleryImages.length) {
+        galleryIndex = 0;
+    }
+
+    updateGalleryImage();
+}
+
+/* ========================================
+   スワイプ開始位置を記録
+======================================== */
+
+function handleGalleryTouchStart(event) {
+    if (!event.touches || event.touches.length === 0) {
+        return;
+    }
+
+    galleryTouchStartX =
+        event.touches[0].clientX;
+}
+
+/* ========================================
+   スワイプ方向を判定
+======================================== */
+
+function handleGalleryTouchEnd(event) {
+    if (
+        !event.changedTouches ||
+        event.changedTouches.length === 0 ||
+        galleryImages.length <= 1
+    ) {
+        return;
+    }
+
+    const touchEndX =
+        event.changedTouches[0].clientX;
+
+    const distance =
+        touchEndX - galleryTouchStartX;
+
+    const swipeThreshold = 45;
+
+    if (Math.abs(distance) < swipeThreshold) {
+        return;
+    }
+
+    if (distance < 0) {
+        changeGalleryImage(1);
+    } else {
+        changeGalleryImage(-1);
+    }
 }
 
 /* ========================================
@@ -579,7 +916,7 @@ function createNewBookHTML() {
                 class="cover-button"
                 type="button"
                 onclick="openCover()"
-                aria-label="${newBook.title}の表紙を拡大表示"
+                aria-label="${newBook.title}の表紙とサンプルを表示"
             >
                 <img
                     class="book-cover"
@@ -620,10 +957,6 @@ function createNewBookHTML() {
                     <h3>作品紹介</h3>
                     <p>${newBook.description}</p>
                 </section>
-                ${createSampleImagesHTML(
-                newBook.samples,
-                newBook.title
-                     )}
             </div>
         </article>
     `;
@@ -635,14 +968,14 @@ function createNewBookHTML() {
 
 function createBacklistHTML() {
     return backlistBooks
-        .map((book) => {
+        .map((book, index) => {
             return `
                 <article class="backlist-card">
                     <button
                         class="backlist-cover-button"
                         type="button"
-                        onclick="openBookCover('${book.image}', '${book.title}')"
-                        aria-label="${book.title}の表紙を拡大表示"
+                        onclick="openBookGallery(backlistBooks[${index}])"
+                        aria-label="${book.title}の表紙とサンプルを表示"
                     >
                         <img
                             class="backlist-cover"
@@ -678,11 +1011,6 @@ function createBacklistHTML() {
                         <p>
                             ${book.description}
                         </p>
-
-                        ${createSampleImagesHTML(
-                            book.samples,
-                            book.title
-                        )}
                     </div>
                 </article>
             `;
@@ -1038,8 +1366,8 @@ function createEventMenuItemHTML(item) {
             <button
                 class="backlist-cover-button"
                 type="button"
-                onclick="openBookCover('${item.image}', '${item.title}')"
-                aria-label="${item.title}の表紙を拡大表示"
+                onclick="openEventBookGallery('${item.eventItemId}')"
+                aria-label="${item.title}の表紙とサンプルを表示"
             >
                 <img
                     class="event-menu-item-image"
@@ -1295,6 +1623,31 @@ function createEventMenuHTML() {
         </section>
     `;
 }
+
+/* ========================================
+   ギャラリーのキーボード操作
+======================================== */
+
+document.addEventListener("keydown", (event) => {
+    const modal =
+        document.getElementById("cover-modal");
+
+    if (!modal || !modal.classList.contains("open")) {
+        return;
+    }
+
+    if (event.key === "ArrowLeft") {
+        changeGalleryImage(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+        changeGalleryImage(1);
+    }
+
+    if (event.key === "Escape") {
+        forceCloseCover();
+    }
+});
 
 /* ========================================
    初期表示
