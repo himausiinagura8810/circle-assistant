@@ -179,12 +179,44 @@ const backlistBooks = [
         price: "500円",
         pages: "32P",
         genre: "ギャグ",
-        image: "picture/backbook1.png",
+        image: "picture/backbook1/hyoushi.png",
 
         samples: [
-            "picture/backbook1-sample1.png",
-            "picture/backbook1-sample2.png",
-            "picture/backbook1-sample3.png"
+            "picture/backbook1/page001.png",
+            "picture/backbook1/page002.png",
+            "picture/backbook1/page003.png",
+            "picture/backbook1/page004.png",
+        ],
+
+        badges: [
+            "既刊",
+            "全年齢"
+        ],
+
+        status: "残りわずか",
+        recommendation: "ギャグ好きにおすすめ",
+        showInEventMenu: true,
+
+        special: [
+            "描き下ろしペーパー",
+            "イベント限定ポストカード"
+        ],
+
+        description:
+            "レスラー達の日常を描いたギャグ漫画です。"
+    },
+     {
+        title: "ドMの品格",
+        price: "500円",
+        pages: "32P",
+        genre: "ギャグ",
+        image: "picture/backbook2/hyoushi.png",
+
+        samples: [
+            "picture/backbook2/page001.png",
+            "picture/backbook2/page002.png",
+            "picture/backbook2/page003.png",
+            "picture/backbook2/page004.png",
         ],
 
         badges: [
@@ -205,41 +237,67 @@ const backlistBooks = [
             "レスラー達の日常を描いたギャグ漫画です。"
     },
     {
-        title: "準備中",
-        price: "未定",
-        pages: "未定",
-        genre: "未定",
-        image: "picture/backbook2.png",
+        title: "ドMの品格",
+        price: "500円",
+        pages: "32P",
+        genre: "ギャグ",
+        image: "picture/backbook3/hyoushi.png",
 
-        badges: [
-            "準備中"
+        samples: [
+            "picture/backbook3/page001.png",
+            "picture/backbook3/page002.png",
+            "picture/backbook3/page003.png",
+            "picture/backbook3/page004.png",
         ],
 
-        status: "完売",
-        showInEventMenu: false,
-        recommendation: "こちらは準備中です",
+        badges: [
+            "既刊",
+            "全年齢"
+        ],
+
+        status: "残りわずか",
+        recommendation: "ギャグ好きにおすすめ",
+        showInEventMenu: true,
+
+        special: [
+            "描き下ろしペーパー",
+            "イベント限定ポストカード"
+        ],
 
         description:
-            "こちらは準備中です。"
+            "レスラー達の日常を描いたギャグ漫画です。"
     },
     {
-        title: "準備中",
-        price: "未定",
-        pages: "未定",
-        genre: "未定",
-        image: "picture/backbook2.png",
+        title: "ドMの品格",
+        price: "500円",
+        pages: "32P",
+        genre: "ギャグ",
+        image: "picture/backbook4/hyoushi.png",
 
-        badges: [
-            "準備中"
+        samples: [
+            "picture/backbook4/page001.png",
+            "picture/backbook4/page002.png",
+            "picture/backbook4/page003.png",
+            "picture/backbook4/page004.png",
         ],
 
-        status: "準備中",
-        showInEventMenu: false,
-        recommendation: "こちらは準備中です",
+        badges: [
+            "既刊",
+            "全年齢"
+        ],
+
+        status: "残りわずか",
+        recommendation: "ギャグ好きにおすすめ",
+        showInEventMenu: true,
+
+        special: [
+            "描き下ろしペーパー",
+            "イベント限定ポストカード"
+        ],
 
         description:
-            "こちらは準備中です。"
-    }
+            "レスラー達の日常を描いたギャグ漫画です。"
+    },
 ];
 
 /* ========================================
