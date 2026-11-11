@@ -45,9 +45,9 @@ const profileInfo = {
     ],
 
     favorites: [
-        "ハイエナ",
+        "ラバー・ハーネス",
         "筋肉質なキャラクター",
-        "ギャグ漫画"
+        "競パン"
     ],
 
     specialties: [
