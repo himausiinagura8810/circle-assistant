@@ -8,8 +8,7 @@ const circleInfo = {
     date: "11/15",
     venue: "大田区産業プラザPIO",
     space: "A-02",
-    message: "新刊はメン地下×ヒールレスラーおじさんの漫画と、性器ピアス日記です！
-    よろしくお願いします！！"
+    message: "新刊はメン地下×ヒールレスラーおじさんの漫画と、性器ピアス日記です。よろしくお願いします！！"
 };
 
 /* ========================================
@@ -109,14 +108,47 @@ const newBook = {
     title: "推しとマッチングしました！",
     price: "¥500",
     pages: "40P",
-    genre: "創作BL",
-    release: "イベント当日",
+    genre: "創作BL"
+    "若者攻め、おじさん受け",
+    release: "男GAN！！(11/15）",
     image: "picture/newbook-cover.png",
 
     samples: [
         "picture/newbook-sample1.png",
         "picture/newbook-sample2.png",
-        "picture/newbook-sample3.png"
+        "picture/newbook-sample3.png",
+        "picture/newbook-sample4.png"
+    ],
+
+    badges: [
+        "新刊",
+        "R-18"
+    ],
+
+    status: "在庫あり",
+    showInEventMenu: true,
+    recommendation: "本日の新刊です",
+
+    special: [
+        "描き下ろしペーパー"
+    ],
+
+    description:
+        "本日の新刊です。メン地下×ヒールレスラーおじさんのすけべ本。ガチムチおじさんが推しのメン地下にたじたじになってる感じの本です。"
+},
+{
+    title: "激アツ！！性器ピアス日記！",
+    price: "¥200",
+    pages: "28P",
+    genre: "エッセイ",
+    release: "男GAN！！(11/15）",
+    image: "picture/newbook2-cover.png",
+
+    samples: [
+        "picture/newbook2-sample1.png",
+        "picture/newbook2-sample2.png",
+        "picture/newbook2-sample3.png",
+        "picture/newbook2-sample4.png"
     ],
 
     badges: [
@@ -126,14 +158,15 @@ const newBook = {
 
     status: "在庫あり",
     showInEventMenu: true,
-    recommendation: "初めての方におすすめ",
+    recommendation: "本日の新刊です",
 
     special: [
         "描き下ろしペーパー"
     ],
 
     description:
-        "ここに新刊のあらすじや、おすすめポイントを掲載します。"
+        "SNSにて無料公開してる性器ピアス日記本。未公開おまけページ増やしてみました。"
+        "今回は1章から2章までの内容をまとめてあります。",
 };
 
 /* ========================================
