@@ -4,11 +4,12 @@
 
 const circleInfo = {
     name: "銀河の荒くれモン",
-    event: "イベント名",
-    date: "開催日未定",
-    venue: "会場未定",
-    space: "スペース未定",
-    message: "遊びに来てください！"
+    event: "男GAN！！",
+    date: "11/15",
+    venue: "大田区産業プラザPIO",
+    space: "A-02",
+    message: "新刊はメン地下×ヒールレスラーおじさんの漫画と、性器ピアス日記です！
+    よろしくお願いします！！"
 };
 
 /* ========================================
@@ -40,20 +41,20 @@ const profileInfo = {
 
     tools: [
         "CLIP STUDIO PAINT",
-        "Photoshop",
+        " Photoshop",
         "Blender"
     ],
 
     favorites: [
         "ラバー・ハーネス",
-        "筋肉質なキャラクター",
+        "ガチムチ髭おじ",
         "競パン"
     ],
 
     specialties: [
         "キャラクターデザイン",
-        "漫画の構成",
-        "デジタルイラスト"
+        "ロゴ制作",
+        "デジタル漫画、イラスト"
     ],
 
     achievements: [
@@ -63,7 +64,8 @@ const profileInfo = {
     ],
 
     favoriteGenre:
-        "ギャグ漫画や、個性的なキャラクターを中心に制作しています。",
+        "どすけべ漫画やギャグ漫画などを中心に制作しています。
+        よければFANBOXもよろしくお願いします！",
 
     message:
         "作品についての感想や質問など、気軽に声をかけてください！"
@@ -80,10 +82,18 @@ const socialLinks = [
         description: "最新情報はこちら"
     },
     {
+        name: "Blu-sky",
+        url: "https://bsky.app/profile/mokurou8810.bsky.social",
+        description: "最新情報はこちら2"
+    },
+    {
         name: "pixiv",
         url: "https://www.pixiv.net/users/1186894",
         description: "イラストや漫画を掲載"
     },
+    name: "Fanbox",
+        url: "https://mokurou8810.fanbox.cc",
+        description: "ご支援はこちら"
     {
         name: "BOOTH",
         url: "https://mokurou.booth.pm/",
@@ -96,10 +106,10 @@ const socialLinks = [
 ======================================== */
 
 const newBook = {
-    title: "作品タイトル",
-    price: "未定",
-    pages: "未定",
-    genre: "未定",
+    title: "推しとマッチングしました！",
+    price: "¥500",
+    pages: "40P",
+    genre: "創作BL",
     release: "イベント当日",
     image: "picture/newbook-cover.png",
 
