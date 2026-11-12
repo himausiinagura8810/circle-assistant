@@ -178,7 +178,8 @@ const backlistBooks = [
         title: "雄膣潮吹き野郎4",
         price: "500円",
         pages: "32P",
-        genre: "ハーネス",
+        genre: "オリジナル",
+               "ハーネス",
                "カントボーイ",
                "ラバー"
         image: "picture/backbook1/hyoushi.png",
@@ -240,10 +241,12 @@ const backlistBooks = [
             "ジェイコフは「愛」と言えばちょろそうと思ったので作りました。ジェイコフにはママみ感じるので…。"
     },
     {
-        title: "ドMの品格",
+        title: "ぼっちゃま本",
         price: "500円",
         pages: "32P",
-        genre: "ギャグ",
+        genre: "カントボーイ",
+               "東京放課後サモナーズ",
+            　　"主3×クロード",
         image: "picture/backbook3/hyoushi.png",
 
         samples: [
@@ -255,11 +258,11 @@ const backlistBooks = [
 
         badges: [
             "既刊",
-            "全年齢"
+            "R-18"
         ],
 
         status: "残りわずか",
-        recommendation: "ギャグ好きにおすすめ",
+        recommendation: "ぼっちゃまは花嫁だと信じて疑わない人向け",
         showInEventMenu: true,
 
         special: [
@@ -268,13 +271,15 @@ const backlistBooks = [
         ],
 
         description:
-            "レスラー達の日常を描いたギャグ漫画です。"
+            "カントボーイなぼっちゃま本。気高い処女を主人公に捧げるお話。"
     },
     {
-        title: "ドMの品格",
+        title: "オリジナルカントボーイ",
         price: "500円",
         pages: "32P",
-        genre: "ギャグ",
+        genre: "オリジナル",
+               "カントボーイ",
+               "四肢欠損",
         image: "picture/backbook4/hyoushi.png",
 
         samples: [
@@ -286,11 +291,11 @@ const backlistBooks = [
 
         badges: [
             "既刊",
-            "全年齢"
+            "R-18"
         ],
 
         status: "残りわずか",
-        recommendation: "ギャグ好きにおすすめ",
+        recommendation: "カントボーイ好きにおすすめ",
         showInEventMenu: true,
 
         special: [
@@ -299,7 +304,8 @@ const backlistBooks = [
         ],
 
         description:
-            "レスラー達の日常を描いたギャグ漫画です。"
+            "事故で四肢を失ったカントボーイ男性が義肢代を支払う為に男娼してる話。
+            こんな内容ですが別に暗い話じゃなくて頭アッパラパーなクソビッチ漫画です。。"
     },
 ];
 
