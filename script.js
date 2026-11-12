@@ -175,10 +175,12 @@ const newBook = {
 
 const backlistBooks = [
     {
-        title: "ドMの品格",
+        title: "雄膣潮吹き野郎4",
         price: "500円",
         pages: "32P",
-        genre: "ギャグ",
+        genre: "ハーネス",
+               "カントボーイ",
+               "ラバー"
         image: "picture/backbook1/hyoushi.png",
 
         samples: [
@@ -190,11 +192,11 @@ const backlistBooks = [
 
         badges: [
             "既刊",
-            "全年齢"
+            "R-18"
         ],
 
         status: "残りわずか",
-        recommendation: "ギャグ好きにおすすめ",
+        recommendation: "ハードプレイ3P本。カントボーイ攻め要素あり。",
         showInEventMenu: true,
 
         special: [
@@ -203,10 +205,10 @@ const backlistBooks = [
         ],
 
         description:
-            "レスラー達の日常を描いたギャグ漫画です。"
+            "ラバーマスクくん本4冊目。1〜3はboothにて電子版のみ取扱中!"
     },
      {
-        title: "ドMの品格",
+        title: "あ",
         price: "500円",
         pages: "32P",
         genre: "ギャグ",
