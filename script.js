@@ -208,10 +208,11 @@ const backlistBooks = [
             "ラバーマスクくん本4冊目。1〜3はboothにて電子版のみ取扱中!"
     },
      {
-        title: "あ",
+        title: "ジェイコフ本",
         price: "500円",
         pages: "32P",
-        genre: "ギャグ",
+        genre: "東京放課後サモナーズ",
+               "主3×ジェイコフ",
         image: "picture/backbook2/hyoushi.png",
 
         samples: [
@@ -223,11 +224,11 @@ const backlistBooks = [
 
         badges: [
             "既刊",
-            "全年齢"
+            "R-18"
         ],
 
         status: "残りわずか",
-        recommendation: "ギャグ好きにおすすめ",
+        recommendation: "ジェイコフは愛といえばちょろいと思ってる人向け",
         showInEventMenu: true,
 
         special: [
@@ -236,7 +237,7 @@ const backlistBooks = [
         ],
 
         description:
-            "レスラー達の日常を描いたギャグ漫画です。"
+            "ジェイコフは「愛」と言えばちょろそうと思ったので作りました。ジェイコフにはママみ感じるので…。"
     },
     {
         title: "ドMの品格",
