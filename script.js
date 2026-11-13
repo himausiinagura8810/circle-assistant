@@ -40,7 +40,7 @@ const profileInfo = {
 
     tools: [
         "CLIP STUDIO PAINT",
-        " Photoshop",
+        "Photoshop",
         "Blender"
     ],
 
@@ -63,8 +63,7 @@ const profileInfo = {
     ],
 
     favoriteGenre:
-        "どすけべ漫画やギャグ漫画などを中心に制作しています。
-        よければFANBOXもよろしくお願いします！",
+        "どすけべ漫画やギャグ漫画などを中心に制作しています。よければFANBOXもよろしくお願いします！",
 
     message:
         "作品についての感想や質問など、気軽に声をかけてください！"
@@ -81,7 +80,7 @@ const socialLinks = [
         description: "最新情報はこちら"
     },
     {
-        name: "Blu-sky",
+        name: "Bluesky",
         url: "https://bsky.app/profile/mokurou8810.bsky.social",
         description: "最新情報はこちら2"
     },
@@ -90,9 +89,11 @@ const socialLinks = [
         url: "https://www.pixiv.net/users/1186894",
         description: "イラストや漫画を掲載"
     },
-    name: "Fanbox",
+    {
+        name: "FANBOX",
         url: "https://mokurou8810.fanbox.cc",
         description: "ご支援はこちら"
+    },
     {
         name: "BOOTH",
         url: "https://mokurou.booth.pm/",
@@ -104,70 +105,70 @@ const socialLinks = [
    新刊データ
 ======================================== */
 
-const newBook = {
-    title: "推しとマッチングしました！",
-    price: "¥500",
-    pages: "40P",
-    genre: "創作BL"
-    "若者攻め、おじさん受け",
-    release: "男GAN！！(11/15）",
-    image: "picture/newbook-cover.png",
+const newBooks = [
+    {
+        title: "推しとマッチングしました！",
+        price: "¥500",
+        pages: "40P",
+        genre: "創作BL / 若者攻め・おじさん受け",
+        release: "男GAN！！（11/15）",
+        image: "picture/newbook-cover.png",
 
-    samples: [
-        "picture/newbook-sample1.png",
-        "picture/newbook-sample2.png",
-        "picture/newbook-sample3.png",
-        "picture/newbook-sample4.png"
-    ],
+        samples: [
+            "picture/newbook-sample1.png",
+            "picture/newbook-sample2.png",
+            "picture/newbook-sample3.png",
+            "picture/newbook-sample4.png"
+        ],
 
-    badges: [
-        "新刊",
-        "R-18"
-    ],
+        badges: [
+            "新刊",
+            "R-18"
+        ],
 
-    status: "在庫あり",
-    showInEventMenu: true,
-    recommendation: "本日の新刊です",
+        status: "在庫あり",
+        showInEventMenu: true,
+        recommendation: "本日の新刊です",
 
-    special: [
-        "描き下ろしペーパー"
-    ],
+        special: [
+            "描き下ろしペーパー"
+        ],
 
-    description:
-        "本日の新刊です。メン地下×ヒールレスラーおじさんのすけべ本。ガチムチおじさんが推しのメン地下にたじたじになってる感じの本です。"
-},
-{
-    title: "激アツ！！性器ピアス日記！",
-    price: "¥200",
-    pages: "28P",
-    genre: "エッセイ",
-    release: "男GAN！！(11/15）",
-    image: "picture/newbook2-cover.png",
+        description:
+            "本日の新刊です。メン地下×ヒールレスラーおじさんのすけべ本。ガチムチおじさんが推しのメン地下にたじたじになってる感じの本です。"
+    },
+    {
+        title: "激アツ！！性器ピアス日記！",
+        price: "¥200",
+        pages: "28P",
+        genre: "エッセイ",
+        release: "男GAN！！（11/15）",
+        image: "picture/newbook2-cover.png",
 
-    samples: [
-        "picture/newbook2-sample1.png",
-        "picture/newbook2-sample2.png",
-        "picture/newbook2-sample3.png",
-        "picture/newbook2-sample4.png"
-    ],
+        samples: [
+            "picture/newbook2-sample1.png",
+            "picture/newbook2-sample2.png",
+            "picture/newbook2-sample3.png",
+            "picture/newbook2-sample4.png"
+        ],
 
-    badges: [
-        "新刊",
-        "全年齢"
-    ],
+        badges: [
+            "新刊",
+            "全年齢"
+        ],
 
-    status: "在庫あり",
-    showInEventMenu: true,
-    recommendation: "本日の新刊です",
+        status: "在庫あり",
+        showInEventMenu: true,
+        recommendation: "本日の新刊です",
 
-    special: [
-        "描き下ろしペーパー"
-    ],
+        special: [
+            "描き下ろしペーパー"
+        ],
 
-    description:
-        "SNSにて無料公開してる性器ピアス日記本。未公開おまけページ増やしてみました。"
-        "今回は1章から2章までの内容をまとめてあります。",
-};
+        description:
+            "SNSにて無料公開してる性器ピアス日記本。未公開おまけページ増やしてみました。今回は1章から2章までの内容をまとめてあります。"
+    }
+];
 
 /* ========================================
    既刊データ
@@ -178,17 +179,14 @@ const backlistBooks = [
         title: "雄膣潮吹き野郎4",
         price: "500円",
         pages: "32P",
-        genre: "オリジナル",
-               "ハーネス",
-               "カントボーイ",
-               "ラバー"
+        genre: "オリジナル / ハーネス / カントボーイ / ラバー",
         image: "picture/backbook1/hyoushi.png",
 
         samples: [
             "picture/backbook1/page001.png",
             "picture/backbook1/page002.png",
             "picture/backbook1/page003.png",
-            "picture/backbook1/page004.png",
+            "picture/backbook1/page004.png"
         ],
 
         badges: [
@@ -206,21 +204,20 @@ const backlistBooks = [
         ],
 
         description:
-            "ラバーマスクくん本4冊目。1〜3はboothにて電子版のみ取扱中!"
+            "ラバーマスクくん本4冊目。1〜3はBOOTHにて電子版のみ取扱中！"
     },
-     {
+    {
         title: "ジェイコフ本",
         price: "500円",
         pages: "32P",
-        genre: "東京放課後サモナーズ",
-               "主3×ジェイコフ",
+        genre: "東京放課後サモナーズ / 主3×ジェイコフ",
         image: "picture/backbook2/hyoushi.png",
 
         samples: [
             "picture/backbook2/page001.png",
             "picture/backbook2/page002.png",
             "picture/backbook2/page003.png",
-            "picture/backbook2/page004.png",
+            "picture/backbook2/page004.png"
         ],
 
         badges: [
@@ -244,16 +241,14 @@ const backlistBooks = [
         title: "ぼっちゃま本",
         price: "500円",
         pages: "32P",
-        genre: "カントボーイ",
-               "東京放課後サモナーズ",
-            　　"主3×クロード",
+        genre: "カントボーイ / 東京放課後サモナーズ / 主3×クロード",
         image: "picture/backbook3/hyoushi.png",
 
         samples: [
             "picture/backbook3/page001.png",
             "picture/backbook3/page002.png",
             "picture/backbook3/page003.png",
-            "picture/backbook3/page004.png",
+            "picture/backbook3/page004.png"
         ],
 
         badges: [
@@ -277,16 +272,14 @@ const backlistBooks = [
         title: "オリジナルカントボーイ",
         price: "500円",
         pages: "32P",
-        genre: "オリジナル",
-               "カントボーイ",
-               "四肢欠損",
+        genre: "オリジナル / カントボーイ / 四肢欠損",
         image: "picture/backbook4/hyoushi.png",
 
         samples: [
             "picture/backbook4/page001.png",
             "picture/backbook4/page002.png",
             "picture/backbook4/page003.png",
-            "picture/backbook4/page004.png",
+            "picture/backbook4/page004.png"
         ],
 
         badges: [
@@ -304,9 +297,8 @@ const backlistBooks = [
         ],
 
         description:
-            "事故で四肢を失ったカントボーイ男性が義肢代を支払う為に男娼してる話。
-            こんな内容ですが別に暗い話じゃなくて頭アッパラパーなクソビッチ漫画です。。"
-    },
+            "事故で四肢を失ったカントボーイ男性が義肢代を支払う為に男娼してる話。こんな内容ですが別に暗い話じゃなくて頭アッパラパーなクソビッチ漫画です。"
+    }
 ];
 
 /* ========================================
@@ -396,8 +388,11 @@ const screens = {
 
 function openScreen(screenName) {
     const selectedScreen = screens[screenName];
-    const detailContent =
-        document.getElementById("detail-content");
+    const detailContent = document.getElementById("detail-content");
+
+    if (!selectedScreen || !detailContent) {
+        return;
+    }
 
     document.getElementById("detail-title").textContent =
         selectedScreen.title;
@@ -422,18 +417,16 @@ function openScreen(screenName) {
     document.getElementById("detail-speech").textContent =
         selectedScreen.speech;
 
-    const character =
-        document.getElementById("detail-character");
+    const character = document.getElementById("detail-character");
 
-    character.classList.remove("character-reaction");
-    void character.offsetWidth;
-    character.classList.add("character-reaction");
+    if (character) {
+        character.classList.remove("character-reaction");
+        void character.offsetWidth;
+        character.classList.add("character-reaction");
+    }
 
-    document.getElementById("home-screen")
-        .classList.remove("active");
-
-    document.getElementById("detail-screen")
-        .classList.add("active");
+    document.getElementById("home-screen")?.classList.remove("active");
+    document.getElementById("detail-screen")?.classList.add("active");
 
     scrollDetailPageToTop("auto");
 }
@@ -443,11 +436,8 @@ function openScreen(screenName) {
 ======================================== */
 
 function goHome() {
-    document.getElementById("detail-screen")
-        .classList.remove("active");
-
-    document.getElementById("home-screen")
-        .classList.add("active");
+    document.getElementById("detail-screen")?.classList.remove("active");
+    document.getElementById("home-screen")?.classList.add("active");
 
     window.scrollTo({
         top: 0,
@@ -481,8 +471,7 @@ function scrollDetailPageToTop(behavior = "smooth") {
 ======================================== */
 
 function scrollToEventItem(itemId) {
-    const target =
-        document.getElementById(itemId);
+    const target = document.getElementById(itemId);
 
     if (!target) {
         return;
@@ -515,8 +504,14 @@ let galleryTouchStartX = 0;
    新刊の表紙・サンプルを開く
 ======================================== */
 
-function openCover() {
-    openBookGallery(newBook);
+function openCover(index = 0) {
+    const book = newBooks[index];
+
+    if (!book) {
+        return;
+    }
+
+    openBookGallery(book);
 }
 
 /* ========================================
@@ -524,6 +519,10 @@ function openCover() {
 ======================================== */
 
 function openBookGallery(book) {
+    if (!book) {
+        return;
+    }
+
     const samples = Array.isArray(book.samples)
         ? book.samples
         : [];
@@ -550,7 +549,12 @@ function openEventBookGallery(itemId) {
         return;
     }
 
-    openBookGallery(item);
+    if (item.category === "新刊" || item.category === "既刊") {
+        openBookGallery(item);
+        return;
+    }
+
+    openBookCover(item.image, item.title);
 }
 
 /* ========================================
@@ -572,15 +576,19 @@ function openImageGallery(images, title) {
         return;
     }
 
+    const modal = document.getElementById("cover-modal");
+    const modalImage = document.querySelector(".cover-modal-image");
+
+    if (!modal || !modalImage) {
+        return;
+    }
+
     galleryImages = validImages;
     galleryTitle = title;
     galleryIndex = 0;
 
     ensureGalleryUI();
     updateGalleryImage();
-
-    const modal =
-        document.getElementById("cover-modal");
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
@@ -591,11 +599,8 @@ function openImageGallery(images, title) {
 ======================================== */
 
 function ensureGalleryUI() {
-    const modal =
-        document.getElementById("cover-modal");
-
-    const modalImage =
-        document.querySelector(".cover-modal-image");
+    const modal = document.getElementById("cover-modal");
+    const modalImage = document.querySelector(".cover-modal-image");
 
     if (!modal || !modalImage) {
         return;
@@ -610,7 +615,7 @@ function ensureGalleryUI() {
             <button
                 class="gallery-nav-button gallery-prev-button"
                 type="button"
-                onclick="changeGalleryImage(-1)"
+                onclick="changeGalleryImage(-1); event.stopPropagation();"
                 aria-label="前の画像を見る"
             >
                 ‹
@@ -634,7 +639,7 @@ function ensureGalleryUI() {
             <button
                 class="gallery-nav-button gallery-next-button"
                 type="button"
-                onclick="changeGalleryImage(1)"
+                onclick="changeGalleryImage(1); event.stopPropagation();"
                 aria-label="次の画像を見る"
             >
                 ›
@@ -662,37 +667,28 @@ function ensureGalleryUI() {
             .gallery-controls {
                 position: absolute;
                 inset: 0;
-
                 pointer-events: none;
             }
 
             .gallery-nav-button {
                 position: absolute;
                 top: 50%;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 width: 48px !important;
                 height: 48px !important;
                 min-height: 48px !important;
-
                 margin: 0 !important;
                 padding: 0 !important;
-
                 color: #ffffff !important;
                 background: rgb(0 0 0 / 55%) !important;
-
                 border: 2px solid rgb(255 255 255 / 75%) !important;
                 border-radius: 50% !important;
-
                 font-size: 36px !important;
                 font-weight: normal !important;
                 line-height: 1 !important;
-
                 transform: translateY(-50%);
-
                 pointer-events: auto;
                 z-index: 5;
             }
@@ -709,20 +705,15 @@ function ensureGalleryUI() {
                 position: absolute;
                 left: 50%;
                 bottom: 18px;
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 5px;
-
                 padding: 8px 14px;
-
                 color: #ffffff;
                 background: rgb(0 0 0 / 60%);
                 border-radius: 999px;
-
                 transform: translateX(-50%);
-
                 pointer-events: none;
                 z-index: 5;
             }
@@ -730,7 +721,6 @@ function ensureGalleryUI() {
             .gallery-counter,
             .gallery-help {
                 margin: 0;
-
                 color: #ffffff;
                 text-align: center;
             }
@@ -745,12 +735,9 @@ function ensureGalleryUI() {
             }
 
             .gallery-controls.is-single .gallery-nav-button,
-            .gallery-controls.is-single .gallery-help {
-                display: none !important;
-            }
-
+            .gallery-controls.is-single .gallery-help,
             .gallery-controls.is-single .gallery-bottom-area {
-                display: none;
+                display: none !important;
             }
 
             @media (max-width: 700px) {
@@ -758,7 +745,6 @@ function ensureGalleryUI() {
                     width: 42px !important;
                     height: 42px !important;
                     min-height: 42px !important;
-
                     font-size: 32px !important;
                 }
 
@@ -772,7 +758,6 @@ function ensureGalleryUI() {
 
                 .gallery-bottom-area {
                     bottom: 12px;
-
                     padding: 7px 12px;
                 }
             }
@@ -803,14 +788,9 @@ function ensureGalleryUI() {
 ======================================== */
 
 function updateGalleryImage() {
-    const modalImage =
-        document.querySelector(".cover-modal-image");
-
-    const counter =
-        document.getElementById("gallery-counter");
-
-    const controls =
-        document.getElementById("gallery-controls");
+    const modalImage = document.querySelector(".cover-modal-image");
+    const counter = document.getElementById("gallery-counter");
+    const controls = document.getElementById("gallery-controls");
 
     if (!modalImage || galleryImages.length === 0) {
         return;
@@ -821,8 +801,7 @@ function updateGalleryImage() {
     if (galleryIndex === 0 && galleryImages.length > 1) {
         modalImage.alt = `${galleryTitle}の表紙`;
     } else if (galleryImages.length > 1) {
-        modalImage.alt =
-            `${galleryTitle}のサンプル${galleryIndex}`;
+        modalImage.alt = `${galleryTitle}のサンプル${galleryIndex}`;
     } else {
         modalImage.alt = `${galleryTitle}の拡大画像`;
     }
@@ -871,8 +850,7 @@ function handleGalleryTouchStart(event) {
         return;
     }
 
-    galleryTouchStartX =
-        event.touches[0].clientX;
+    galleryTouchStartX = event.touches[0].clientX;
 }
 
 /* ========================================
@@ -888,12 +866,8 @@ function handleGalleryTouchEnd(event) {
         return;
     }
 
-    const touchEndX =
-        event.changedTouches[0].clientX;
-
-    const distance =
-        touchEndX - galleryTouchStartX;
-
+    const touchEndX = event.changedTouches[0].clientX;
+    const distance = touchEndX - galleryTouchStartX;
     const swipeThreshold = 45;
 
     if (Math.abs(distance) < swipeThreshold) {
@@ -912,10 +886,7 @@ function handleGalleryTouchEnd(event) {
 ======================================== */
 
 function closeCover(event) {
-    if (
-        event &&
-        event.target !== event.currentTarget
-    ) {
+    if (event && event.target !== event.currentTarget) {
         return;
     }
 
@@ -927,8 +898,11 @@ function closeCover(event) {
 ======================================== */
 
 function forceCloseCover() {
-    const modal =
-        document.getElementById("cover-modal");
+    const modal = document.getElementById("cover-modal");
+
+    if (!modal) {
+        return;
+    }
 
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
@@ -944,17 +918,13 @@ function createSpecialHTML(specialItems) {
     }
 
     const listItems = specialItems
-        .map((item) => {
-            return `<li>${item}</li>`;
-        })
+        .map((item) => `<li>${item}</li>`)
         .join("");
 
     return `
         <section class="book-special">
             <h3>購入特典</h3>
-            <ul>
-                ${listItems}
-            </ul>
+            <ul>${listItems}</ul>
         </section>
     `;
 }
@@ -980,11 +950,7 @@ function createBadgeHTML(badges) {
         })
         .join("");
 
-    return `
-        <div class="book-badges">
-            ${badgeItems}
-        </div>
-    `;
+    return `<div class="book-badges">${badgeItems}</div>`;
 }
 
 /* ========================================
@@ -1008,7 +974,7 @@ function getBadgeClass(badge) {
         return "badge-coming-soon";
     }
 
-    if (badge === "R18") {
+    if (badge === "R18" || badge === "R-18") {
         return "badge-r18";
     }
 
@@ -1020,56 +986,60 @@ function getBadgeClass(badge) {
 ======================================== */
 
 function createNewBookHTML() {
-    return `
-        <article class="book-card">
-            <button
-                class="cover-button"
-                type="button"
-                onclick="openCover()"
-                aria-label="${newBook.title}の表紙とサンプルを表示"
-            >
-                <img
-                    class="book-cover"
-                    src="${newBook.image}"
-                    alt="${newBook.title}の表紙"
-                >
-            </button>
+    return newBooks
+        .map((book, index) => {
+            return `
+                <article class="book-card">
+                    <button
+                        class="cover-button"
+                        type="button"
+                        onclick="openCover(${index})"
+                        aria-label="${book.title}の表紙とサンプルを表示"
+                    >
+                        <img
+                            class="book-cover"
+                            src="${book.image}"
+                            alt="${book.title}の表紙"
+                        >
+                    </button>
 
-            <div class="book-info">
-                ${createBadgeHTML(newBook.badges)}
+                    <div class="book-info">
+                        ${createBadgeHTML(book.badges)}
 
-                <h2 class="book-title">
-                    ${newBook.title}
-                </h2>
+                        <h2 class="book-title">
+                            ${book.title}
+                        </h2>
 
-                <dl class="book-details">
-                    <div>
-                        <dt>価格</dt>
-                        <dd>${newBook.price}</dd>
+                        <dl class="book-details">
+                            <div>
+                                <dt>価格</dt>
+                                <dd>${book.price}</dd>
+                            </div>
+                            <div>
+                                <dt>ページ数</dt>
+                                <dd>${book.pages}</dd>
+                            </div>
+                            <div>
+                                <dt>ジャンル</dt>
+                                <dd>${book.genre}</dd>
+                            </div>
+                            <div>
+                                <dt>頒布予定</dt>
+                                <dd>${book.release}</dd>
+                            </div>
+                        </dl>
+
+                        ${createSpecialHTML(book.special)}
+
+                        <section class="book-summary">
+                            <h3>作品紹介</h3>
+                            <p>${book.description}</p>
+                        </section>
                     </div>
-                    <div>
-                        <dt>ページ数</dt>
-                        <dd>${newBook.pages}</dd>
-                    </div>
-                    <div>
-                        <dt>ジャンル</dt>
-                        <dd>${newBook.genre}</dd>
-                    </div>
-                    <div>
-                        <dt>頒布予定</dt>
-                        <dd>${newBook.release}</dd>
-                    </div>
-                </dl>
-
-                ${createSpecialHTML(newBook.special)}
-
-                <section class="book-summary">
-                    <h3>作品紹介</h3>
-                    <p>${newBook.description}</p>
-                </section>
-            </div>
-        </article>
-    `;
+                </article>
+            `;
+        })
+        .join("");
 }
 
 /* ========================================
@@ -1096,7 +1066,6 @@ function createBacklistHTML() {
 
                     <div class="backlist-info">
                         ${createBadgeHTML(book.badges)}
-
                         <h2>${book.title}</h2>
 
                         <dl>
@@ -1104,12 +1073,10 @@ function createBacklistHTML() {
                                 <dt>価格</dt>
                                 <dd>${book.price}</dd>
                             </div>
-
                             <div>
                                 <dt>ページ数</dt>
                                 <dd>${book.pages}</dd>
                             </div>
-
                             <div>
                                 <dt>ジャンル</dt>
                                 <dd>${book.genre}</dd>
@@ -1117,10 +1084,7 @@ function createBacklistHTML() {
                         </dl>
 
                         ${createSpecialHTML(book.special)}
-
-                        <p>
-                            ${book.description}
-                        </p>
+                        <p>${book.description}</p>
                     </div>
                 </article>
             `;
@@ -1133,26 +1097,15 @@ function createBacklistHTML() {
 ======================================== */
 
 function createProfileHTML() {
-    const activityItems =
-        createListItemsHTML(profileInfo.activities);
-
-    const toolItems =
-        createListItemsHTML(profileInfo.tools);
-
-    const favoriteItems =
-        createListItemsHTML(profileInfo.favorites);
-
-    const specialtyItems =
-        createListItemsHTML(profileInfo.specialties);
-
-    const achievementItems =
-        createListItemsHTML(profileInfo.achievements);
+    const activityItems = createListItemsHTML(profileInfo.activities);
+    const toolItems = createListItemsHTML(profileInfo.tools);
+    const favoriteItems = createListItemsHTML(profileInfo.favorites);
+    const specialtyItems = createListItemsHTML(profileInfo.specialties);
+    const achievementItems = createListItemsHTML(profileInfo.achievements);
 
     return `
         <section class="profile-card">
-            <p class="profile-label">
-                作者プロフィール
-            </p>
+            <p class="profile-label">作者プロフィール</p>
 
             <h2 class="profile-name">
                 ${profileInfo.name}
@@ -1223,9 +1176,7 @@ function createProfileHTML() {
 
 function createListItemsHTML(items) {
     return items
-        .map((item) => {
-            return `<li>${item}</li>`;
-        })
+        .map((item) => `<li>${item}</li>`)
         .join("");
 }
 
@@ -1246,12 +1197,12 @@ function createSocialLinksHTML() {
                     <span class="social-link-name">
                         ${link.name}
                     </span>
+
                     <span class="social-link-description">
                         ${link.description}
                     </span>
-                    <span class="social-link-arrow">
-                        →
-                    </span>
+
+                    <span class="social-link-arrow">→</span>
                 </a>
             `;
         })
@@ -1260,9 +1211,11 @@ function createSocialLinksHTML() {
     return `
         <section class="social-links">
             <h2>活動ページ</h2>
+
             <p class="social-links-intro">
                 各サービスのページを開きます。
             </p>
+
             <div class="social-link-list">
                 ${linkItems}
             </div>
@@ -1275,8 +1228,7 @@ function createSocialLinksHTML() {
 ======================================== */
 
 function renderCircleInfo() {
-    const circleInfoArea =
-        document.getElementById("circle-info");
+    const circleInfoArea = document.getElementById("circle-info");
 
     if (!circleInfoArea) {
         return;
@@ -1324,10 +1276,12 @@ function renderCircleInfo() {
 
 function getEventMenuItems() {
     const allItems = [
-        {
-            ...newBook,
-            category: "新刊"
-        },
+        ...newBooks.map((book) => {
+            return {
+                ...book,
+                category: "新刊"
+            };
+        }),
         ...backlistBooks.map((book) => {
             return {
                 ...book,
@@ -1338,9 +1292,7 @@ function getEventMenuItems() {
     ];
 
     return allItems
-        .filter((item) => {
-            return item.showInEventMenu !== false;
-        })
+        .filter((item) => item.showInEventMenu !== false)
         .map((item, index) => {
             return {
                 ...item,
@@ -1454,18 +1406,11 @@ function createEventMenuBadgeHTML(badges) {
 ======================================== */
 
 function createEventMenuItemHTML(item) {
-    const itemStatusClass =
-        getEventMenuItemClass(item.status);
-
-    const categoryClass =
-        getEventMenuCategoryClass(item.category);
+    const itemStatusClass = getEventMenuItemClass(item.status);
+    const categoryClass = getEventMenuCategoryClass(item.category);
 
     const soldOutLabel = item.status === "完売"
-        ? `
-            <p class="event-menu-sold-out-label">
-                完売
-            </p>
-        `
+        ? `<p class="event-menu-sold-out-label">完売</p>`
         : "";
 
     return `
@@ -1477,7 +1422,7 @@ function createEventMenuItemHTML(item) {
                 class="backlist-cover-button"
                 type="button"
                 onclick="openEventBookGallery('${item.eventItemId}')"
-                aria-label="${item.title}の表紙とサンプルを表示"
+                aria-label="${item.title}の画像を表示"
             >
                 <img
                     class="event-menu-item-image"
@@ -1561,8 +1506,7 @@ function createPriceCategoryHTML(category) {
         return "";
     }
 
-    const categoryClass =
-        getEventMenuCategoryClass(category);
+    const categoryClass = getEventMenuCategoryClass(category);
 
     return `
         <span class="event-price-category ${categoryClass}">
@@ -1650,9 +1594,7 @@ function createEventMenuGroupsHTML(items) {
             }
 
             const itemCards = categoryItems
-                .map((item) => {
-                    return createEventMenuItemHTML(item);
-                })
+                .map((item) => createEventMenuItemHTML(item))
                 .join("");
 
             return `
@@ -1671,14 +1613,9 @@ function createEventMenuGroupsHTML(items) {
 ======================================== */
 
 function createEventMenuHTML() {
-    const eventMenuItems =
-        getEventMenuItems();
-
-    const eventPriceList =
-        createEventPriceListHTML(eventMenuItems);
-
-    const eventMenuGroups =
-        createEventMenuGroupsHTML(eventMenuItems);
+    const eventMenuItems = getEventMenuItems();
+    const eventPriceList = createEventPriceListHTML(eventMenuItems);
+    const eventMenuGroups = createEventMenuGroupsHTML(eventMenuItems);
 
     return `
         <section class="event-menu-card">
@@ -1739,8 +1676,7 @@ function createEventMenuHTML() {
 ======================================== */
 
 document.addEventListener("keydown", (event) => {
-    const modal =
-        document.getElementById("cover-modal");
+    const modal = document.getElementById("cover-modal");
 
     if (!modal || !modal.classList.contains("open")) {
         return;
