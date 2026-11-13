@@ -1847,13 +1847,33 @@ button:active {
     }
 
     /* ========================================
-       吹き出しをキャラクターへ近づける
+       スマートフォン縦画面の吹き出し位置
     ======================================== */
 
+    .character-panel {
+        position: relative;
+
+        min-height: 520px;
+
+        padding-top: 150px;
+     }
+
     .speech-bubble {
-        top: 160px;
+        top: 24px;
+        left: 20px;
+        right: 20px;
+
+        max-width: 360px;
     }
 
+    .character-image,
+    #detail-screen .character-image {
+        max-width: 360px;
+        max-height: 58vh;
+
+        margin-top: 70px;
+    }
+    
     /* ========================================
        新刊カードのスマートフォン表示
     ======================================== */
