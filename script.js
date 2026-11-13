@@ -307,25 +307,6 @@ const backlistBooks = [
 
 const eventExtras = [
     {
-        title: "イベント限定ポストカード",
-        price: "100円",
-        pages: "―",
-        genre: "グッズ",
-        image: "picture/postcard.png",
-        category: "グッズ",
-
-        badges: [
-            "イベント限定"
-        ],
-
-        status: "在庫あり",
-        showInEventMenu: true,
-        recommendation: "本と一緒にどうぞ",
-
-        description:
-            "イベント限定で頒布するオリジナルポストカードです。"
-    },
-    {
         title: "無料配布ペーパー",
         price: "無料",
         pages: "1枚",
