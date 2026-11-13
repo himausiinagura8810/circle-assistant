@@ -115,10 +115,10 @@ const newBooks = [
         image: "picture/newbook-cover.png",
 
         samples: [
-            "picture/newbook-sample1.png",
-            "picture/newbook-sample2.png",
-            "picture/newbook-sample3.png",
-            "picture/newbook-sample4.png"
+            "picture/newbook1/page001.png",
+            "picture/newbook1/page002.png",
+            "picture/newbook1/page003.png",
+            "picture/newbook1/page004.png"
         ],
 
         badges: [
@@ -146,10 +146,10 @@ const newBooks = [
         image: "picture/newbook2-cover.png",
 
         samples: [
-            "picture/newbook2-sample1.png",
-            "picture/newbook2-sample2.png",
-            "picture/newbook2-sample3.png",
-            "picture/newbook2-sample4.png"
+            "picture/newbook2/page001.png",
+            "picture/newbook2/page002.png",
+            "picture/newbook2/page003.png",
+            "picture/newbook2/page004.png"
         ],
 
         badges: [
