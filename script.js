@@ -115,10 +115,10 @@ const newBooks = [
         image: "picture/newbook-cover.png",
 
         samples: [
-            "picture/newbook1/page001.png",
-            "picture/newbook1/page002.png",
-            "picture/newbook1/page003.png",
-            "picture/newbook1/page004.png"
+            "picture/newbook-sample1.png",
+            "picture/newbook-sample2.png",
+            "picture/newbook-sample3.png",
+            "picture/newbook-sample4.png"
         ],
 
         badges: [
@@ -146,10 +146,10 @@ const newBooks = [
         image: "picture/newbook2-cover.png",
 
         samples: [
-            "picture/newbook2/page001.png",
-            "picture/newbook2/page002.png",
-            "picture/newbook2/page003.png",
-            "picture/newbook2/page004.png"
+            "picture/newbook2-sample1.png",
+            "picture/newbook2-sample2.png",
+            "picture/newbook2-sample3.png",
+            "picture/newbook2-sample4.png"
         ],
 
         badges: [
@@ -307,6 +307,25 @@ const backlistBooks = [
 
 const eventExtras = [
     {
+        title: "イベント限定ポストカード",
+        price: "100円",
+        pages: "―",
+        genre: "グッズ",
+        image: "picture/postcard.png",
+        category: "グッズ",
+
+        badges: [
+            "イベント限定"
+        ],
+
+        status: "在庫あり",
+        showInEventMenu: true,
+        recommendation: "本と一緒にどうぞ",
+
+        description:
+            "イベント限定で頒布するオリジナルポストカードです。"
+    },
+    {
         title: "無料配布ペーパー",
         price: "無料",
         pages: "1枚",
@@ -322,7 +341,7 @@ const eventExtras = [
         showInEventMenu: true,
 
         description:
-            "作品紹介や描き下ろしイラストを掲載した無料ペーパーです。ご購入時に1枚お付けします。無くなり次第終了になりますので、お気を付けください。"
+            "作品紹介や描き下ろしイラストを掲載した無料ペーパーです。"
     }
 ];
 
@@ -335,33 +354,87 @@ const screens = {
         title: "新刊情報",
         message: "こちらが今回の新刊です！",
         speech: "こいつが今回の新刊だ！ ぜひ見ていってくれ！",
+        characterImage: "picture/character/character3.png",
         content: ""
     },
     backlist: {
         title: "既刊情報",
         message: "これまでに頒布した作品をご紹介します。",
         speech: "前に作った本も、ここから確認できるぞ！",
+        characterImage: "picture/character/character5.png",
         content: ""
     },
     eventmenu: {
         title: "イベントお品書き",
         message: "本日の頒布物をご紹介します！",
         speech: "今日のお品書きだ！ 気になる本を探してみてくれ！",
+        characterImage: "picture/character/character2.png",
         content: ""
     },
     profile: {
         title: "作者紹介",
         message: "作者についてご紹介します！",
         speech: "作者本人にも、気軽に声をかけてみてくれ！",
+        characterImage: "picture/character/character4.png",
         content: ""
     },
     sns: {
         title: "SNS",
         message: "SNSや通販ページはこちらです。",
         speech: "活動情報を見たいなら、ここを確認してくれ！",
+        characterImage: "picture/character/character1.png",
         content: ""
     }
 };
+
+/* ========================================
+   画面ごとのキャラクター画像
+======================================== */
+
+const homeCharacterImage =
+    "picture/character/character1.png";
+
+/* ========================================
+   ホーム画面のキャラクター画像を設定
+======================================== */
+
+function setHomeCharacterImage() {
+    const characterImage =
+        document.querySelector(
+            "#home-screen .character-image"
+        );
+
+    if (!characterImage) {
+        return;
+    }
+
+    characterImage.src = homeCharacterImage;
+    characterImage.alt = "案内キャラクター";
+}
+
+/* ========================================
+   詳細画面のキャラクター画像を設定
+======================================== */
+
+function setDetailCharacterImage(screenName) {
+    const selectedScreen = screens[screenName];
+
+    if (!selectedScreen || !selectedScreen.characterImage) {
+        return;
+    }
+
+    const characterImage =
+        document.querySelector(
+            "#detail-screen .character-image"
+        );
+
+    if (!characterImage) {
+        return;
+    }
+
+    characterImage.src = selectedScreen.characterImage;
+    characterImage.alt = `${selectedScreen.title}の案内キャラクター`;
+}
 
 /* ========================================
    詳細画面を開く
@@ -397,6 +470,8 @@ function openScreen(screenName) {
 
     document.getElementById("detail-speech").textContent =
         selectedScreen.speech;
+
+    setDetailCharacterImage(screenName);
 
     const character = document.getElementById("detail-character");
 
@@ -1681,3 +1756,4 @@ document.addEventListener("keydown", (event) => {
 ======================================== */
 
 renderCircleInfo();
+setHomeCharacterImage();
