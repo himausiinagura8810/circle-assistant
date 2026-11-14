@@ -382,7 +382,7 @@ const screens = {
         title: "SNS",
         message: "SNSや通販ページはこちらです。",
         speech: "活動情報を見たいなら、ここを確認してくれ！",
-        characterImage: "picture/character/character1.png",
+        characterImage: "picture/character/character4.png",
         content: ""
     }
 };
