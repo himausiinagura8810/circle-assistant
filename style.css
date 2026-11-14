@@ -1927,34 +1927,17 @@ button:active {
         justify-content: flex-end;
 
         width: 100%;
-        min-height: 650px;
+        min-height: 680px;
 
         /*
-           上部を吹き出し専用スペースとして確保
+           下側に吹き出し用のスペースを確保
         */
-        padding: 180px 24px 0;
+        padding:
+            24px
+            24px
+            165px;
 
         overflow: hidden;
-    }
-
-    /* ========================================
-       スマートフォンの吹き出し
-    ======================================== */
-
-    .speech-bubble {
-        position: absolute;
-
-        top: 24px;
-        left: 20px;
-        right: 20px;
-
-        width: auto;
-        max-width: 360px;
-
-        margin: 0 auto;
-        padding: 16px 20px;
-
-        z-index: 3;
     }
 
     /* ========================================
@@ -1967,8 +1950,13 @@ button:active {
 
         width: auto;
 
-        max-width: min(360px, calc(100vw - 48px));
-        max-height: 52dvh;
+        max-width:
+            min(
+                360px,
+                calc(100vw - 48px)
+            );
+
+        max-height: 50dvh;
 
         margin: 0 auto;
 
@@ -1976,6 +1964,60 @@ button:active {
         object-position: center bottom;
 
         flex-shrink: 0;
+    }
+
+    /* ========================================
+       スマートフォンの吹き出し
+       キャラクター表示枠の下側へ配置
+    ======================================== */
+
+    .speech-bubble {
+        position: absolute;
+
+        top: auto;
+        bottom: 24px;
+
+        left: 20px;
+        right: 20px;
+
+        width: auto;
+        max-width: 360px;
+
+        margin: 0 auto;
+        padding: 16px 20px;
+
+        background-color: #ffffff;
+
+        border: 3px solid #222222;
+        border-radius: 18px;
+
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.6;
+
+        z-index: 3;
+    }
+
+    /* ========================================
+       スマートフォンでは
+       吹き出しの三角を上向きにする
+    ======================================== */
+
+    .speech-bubble::after {
+        top: -17px;
+        right: 72px;
+        bottom: auto;
+
+        width: 28px;
+        height: 28px;
+
+        background-color: #ffffff;
+
+        border: none;
+        border-top: 3px solid #222222;
+        border-left: 3px solid #222222;
+
+        transform: rotate(45deg);
     }
 
     /* ========================================
@@ -1998,7 +2040,9 @@ button:active {
     ======================================== */
 
     .backlist-card {
-        grid-template-columns: 110px minmax(0, 1fr);
+        grid-template-columns:
+            110px
+            minmax(0, 1fr);
 
         gap: 14px;
 
@@ -2010,7 +2054,9 @@ button:active {
     }
 
     .backlist-info dl div {
-        grid-template-columns: 72px minmax(0, 1fr);
+        grid-template-columns:
+            72px
+            minmax(0, 1fr);
 
         gap: 8px;
     }
@@ -2050,7 +2096,9 @@ button:active {
     }
 
     .event-menu-item-details div {
-        grid-template-columns: 84px minmax(0, 1fr);
+        grid-template-columns:
+            84px
+            minmax(0, 1fr);
 
         gap: 10px;
     }
@@ -2102,18 +2150,77 @@ button:active {
 
 @media (max-width: 700px) and (orientation: portrait) {
 
+    /* ========================================
+       キャラクター表示枠
+    ======================================== */
+
+    .character-panel {
+        min-height: 720px;
+
+        /*
+           最下部の吹き出し領域を
+           少し広めに確保
+        */
+        padding:
+            24px
+            24px
+            175px;
+    }
+
+    /* ========================================
+       キャラクター画像
+    ======================================== */
+
+    .character-image,
+    #detail-screen .character-image {
+        max-height: 52dvh;
+    }
+
+    /* ========================================
+       吹き出し
+    ======================================== */
+
+    .speech-bubble {
+        bottom: 28px;
+    }
+}
+
+/* ========================================
+   特に画面幅が狭いスマートフォン
+======================================== */
+
+@media (max-width: 430px) {
+
     .character-panel {
         min-height: 680px;
 
-        /*
-           吹き出しとキャラクターの間隔を
-           縦画面ではさらに広くする
-        */
-        padding-top: 190px;
+        padding:
+            20px
+            18px
+            165px;
     }
 
     .character-image,
     #detail-screen .character-image {
+        max-width:
+            min(
+                340px,
+                calc(100vw - 36px)
+            );
+
         max-height: 50dvh;
+    }
+
+    .speech-bubble {
+        left: 16px;
+        right: 16px;
+
+        bottom: 24px;
+
+        max-width: 350px;
+
+        padding: 14px 18px;
+
+        font-size: 17px;
     }
 }
