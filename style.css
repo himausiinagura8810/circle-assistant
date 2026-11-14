@@ -1927,17 +1927,74 @@ button:active {
         justify-content: flex-end;
 
         width: 100%;
-        min-height: 680px;
+        min-height: 720px;
 
         /*
-           下側に吹き出し用のスペースを確保
+           上側に吹き出し専用スペースを確保。
+           キャラクターはその下から表示する。
         */
         padding:
+            210px
             24px
-            24px
-            165px;
+            0;
 
         overflow: hidden;
+    }
+
+    /* ========================================
+       スマートフォンの吹き出し
+    ======================================== */
+
+    .speech-bubble {
+        position: absolute;
+
+        top: 24px;
+        bottom: auto;
+
+        left: 20px;
+        right: 20px;
+
+        width: auto;
+        max-width: 360px;
+
+        margin: 0 auto;
+        padding: 16px 20px;
+
+        background-color: #ffffff;
+
+        border: 3px solid #222222;
+        border-radius: 18px;
+
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.6;
+
+        z-index: 3;
+    }
+
+    /* ========================================
+       吹き出しの三角
+    ======================================== */
+
+    .speech-bubble::after {
+        content: "";
+
+        position: absolute;
+
+        top: auto;
+        right: 72px;
+        bottom: -18px;
+
+        width: 28px;
+        height: 28px;
+
+        background-color: #ffffff;
+
+        border: none;
+        border-right: 3px solid #222222;
+        border-bottom: 3px solid #222222;
+
+        transform: rotate(45deg);
     }
 
     /* ========================================
@@ -1964,60 +2021,6 @@ button:active {
         object-position: center bottom;
 
         flex-shrink: 0;
-    }
-
-    /* ========================================
-       スマートフォンの吹き出し
-       キャラクター表示枠の下側へ配置
-    ======================================== */
-
-    .speech-bubble {
-        position: absolute;
-
-        top: auto;
-        bottom: 24px;
-
-        left: 20px;
-        right: 20px;
-
-        width: auto;
-        max-width: 360px;
-
-        margin: 0 auto;
-        padding: 16px 20px;
-
-        background-color: #ffffff;
-
-        border: 3px solid #222222;
-        border-radius: 18px;
-
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 1.6;
-
-        z-index: 3;
-    }
-
-    /* ========================================
-       スマートフォンでは
-       吹き出しの三角を上向きにする
-    ======================================== */
-
-    .speech-bubble::after {
-        top: -17px;
-        right: 72px;
-        bottom: auto;
-
-        width: 28px;
-        height: 28px;
-
-        background-color: #ffffff;
-
-        border: none;
-        border-top: 3px solid #222222;
-        border-left: 3px solid #222222;
-
-        transform: rotate(45deg);
     }
 
     /* ========================================
@@ -2150,38 +2153,22 @@ button:active {
 
 @media (max-width: 700px) and (orientation: portrait) {
 
-    /* ========================================
-       キャラクター表示枠
-    ======================================== */
-
     .character-panel {
-        min-height: 720px;
+        min-height: 760px;
 
         /*
-           最下部の吹き出し領域を
-           少し広めに確保
+           吹き出しと頭の間に十分な空間を作る
         */
-        padding:
-            24px
-            24px
-            175px;
+        padding-top: 230px;
     }
-
-    /* ========================================
-       キャラクター画像
-    ======================================== */
 
     .character-image,
     #detail-screen .character-image {
-        max-height: 52dvh;
+        max-height: 50dvh;
     }
 
-    /* ========================================
-       吹き出し
-    ======================================== */
-
     .speech-bubble {
-        bottom: 28px;
+        top: 24px;
     }
 }
 
@@ -2192,12 +2179,12 @@ button:active {
 @media (max-width: 430px) {
 
     .character-panel {
-        min-height: 680px;
+        min-height: 720px;
 
         padding:
-            20px
+            220px
             18px
-            165px;
+            0;
     }
 
     .character-image,
@@ -2208,14 +2195,14 @@ button:active {
                 calc(100vw - 36px)
             );
 
-        max-height: 50dvh;
+        max-height: 48dvh;
     }
 
     .speech-bubble {
+        top: 20px;
+
         left: 16px;
         right: 16px;
-
-        bottom: 24px;
 
         max-width: 350px;
 
