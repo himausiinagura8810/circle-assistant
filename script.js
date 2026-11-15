@@ -194,7 +194,7 @@ const backlistBooks = [
             "R-18"
         ],
 
-        status: "売り切れ",
+        status: "完売",
         recommendation: "ハードプレイ3P本。カントボーイ攻め要素あり。",
         showInEventMenu: true,
 
